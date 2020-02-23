@@ -18,7 +18,6 @@ const Item = styled.div`
     padding:1em;
   `}
   display:inline-block;
-  background-color: #fff;
 `;
 
 function Technologies(props) {

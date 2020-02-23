@@ -19,13 +19,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `portfolio`,
-        path: `${__dirname}/images/portfolio`,
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
@@ -44,15 +37,7 @@ module.exports = {
         background_color: '#037F8C',
         theme_color: '#037F8C',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: /images\/.*\.svg$/,
-        },
+        icon: 'src/images/favicon.png',
       },
     },
     'gatsby-plugin-styled-components',
@@ -71,4 +56,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
   ],
-};
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, Box } from 'grid-styled';
+import { Flex, Box } from 'rebass';
 import scrollToElement from 'scroll-to-element';
 import ButtonLink from './ButtonLink';
 

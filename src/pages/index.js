@@ -1,15 +1,17 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import styled, { css } from 'styled-components';
-import { Flex, Box } from 'grid-styled';
-import Portfolio from '../components/Portfolio';
-import Technologies from '../components/Technologies';
-import ContactForm from '../components/ContactForm';
-import Hero from '../components/Hero';
-import Layout from '../components/Layout';
-import HeroText from '../components/HeroText';
-import Social from '../components/Social';
-import media from '../utils/style';
+import React from 'react'
+import { graphql } from 'gatsby'
+import styled, { css } from 'styled-components'
+import { Flex, Box } from 'rebass'
+import Portfolio from '../components/Portfolio'
+import Technologies from '../components/Technologies'
+import ContactForm from '../components/ContactForm'
+import Hero from '../components/Hero'
+import Layout from '../components/Layout'
+import HeroText from '../components/HeroText'
+import Social from '../components/Social'
+
+import media from '../utils/style'
+
 const Section = styled.div`
   text-align: center;
   padding-top: 45px;
@@ -28,7 +30,7 @@ const Section = styled.div`
         color: #979797;
       }
     `}
-`;
+`
 
 const SectionTitle = styled.h2`
   font-size: 2em;
@@ -36,7 +38,7 @@ const SectionTitle = styled.h2`
   ${media.xs`
     font-size:1.5em;
   `}
-`;
+`
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -59,7 +61,7 @@ const IndexPage = ({ data }) => (
       <Portfolio />
     </Section>
     <Section id="technologies">
-      <SectionTitle>Tech I Use</SectionTitle>
+      <SectionTitle>Stuff I Use</SectionTitle>
       <Technologies edges={data.allLogos.edges} />
     </Section>
     <Section id="contact" dark>
@@ -71,9 +73,9 @@ const IndexPage = ({ data }) => (
       </Flex>
     </Section>
   </Layout>
-);
+)
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query indexQuery {
@@ -94,7 +96,7 @@ export const pageQuery = graphql`
         node {
           id
           fixed(height: 80, grayscale: false) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
@@ -112,4 +114,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
