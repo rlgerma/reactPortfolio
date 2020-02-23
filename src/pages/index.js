@@ -43,6 +43,14 @@ const SectionTitle = styled.h2`
     font-size:1.5em;
   `}
 `;
+const ImgWrapper = styled.div`
+  float: left;
+  display: inline-block;
+`;
+const TextWrapper = styled.div`
+  float: right;
+  display: inline-block;
+`;
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -83,11 +91,19 @@ const IndexPage = ({ data }) => (
         </Box>
       </Flex>
     </Section>
-    <Section id="portfolio" dark>
-      <SectionTitle>My Work</SectionTitle>
-      <Portfolio edges={data.allPortfolioJson.edges} />
-      <PortfolioText edges={data.allPortfolioTextJson.edges} />
-    </Section>
+    <Flex alignItems="center" flexDirection="row">
+      <Section id="portfolio" dark>
+        <ScrollAnimation animateIn="fadeIn" delay="1000" animateOnce={true}>
+          <SectionTitle>My Work</SectionTitle>
+        </ScrollAnimation>
+        <ImgWrapper>
+          <Portfolio edges={data.allPortfolio.edges} />
+        </ImgWrapper>
+        <TextWrapper>
+          <PortfolioText edges={data.allPortfolioJson.edges} />
+        </TextWrapper>
+      </Section>
+    </Flex>
     <Section id="technologies">
       <SectionTitle>
         <ScrollAnimation
@@ -149,12 +165,12 @@ export const pageQuery = graphql`
         }
       }
     }
-    allPortfolioTextJson {
+    allPortfolioJson {
       edges {
         node {
-          project
+          title
           about
-          link
+          url
         }
       }
     }
