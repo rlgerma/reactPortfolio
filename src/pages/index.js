@@ -1,16 +1,19 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled, { css } from 'styled-components'
-import { Flex, Box } from 'rebass'
-import Portfolio from '../components/Portfolio'
-import Technologies from '../components/Technologies'
-import ContactForm from '../components/ContactForm'
-import Hero from '../components/Hero'
-import Layout from '../components/Layout'
-import HeroText from '../components/HeroText'
-import Social from '../components/Social'
+import React from 'react';
+import { graphql } from 'gatsby';
+import styled, { css } from 'styled-components';
+import { Flex, Box } from 'rebass';
+import ScrollAnimation from 'react-animate-on-scroll';
+import 'animate.css/animate.min.css';
+import Portfolio from '../components/Portfolio';
+import Technologies from '../components/Technologies';
+import ContactForm from '../components/ContactForm';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
+import HeroText from '../components/HeroText';
+import PortfolioText from '../components/PortfolioText';
+import Social from '../components/Social';
 
-import media from '../utils/style'
+import media from '../utils/style';
 
 const Section = styled.div`
   text-align: center;
@@ -30,15 +33,16 @@ const Section = styled.div`
         color: #979797;
       }
     `}
-`
+`;
 
 const SectionTitle = styled.h2`
   font-size: 2em;
   margin: 0.67em 0;
+  align-content: left;
   ${media.xs`
     font-size:1.5em;
   `}
-`
+`;
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -47,25 +51,83 @@ const IndexPage = ({ data }) => (
       <Social edges={data.allSocialJson.edges} />
     </Hero>
     <Section id="about-me">
-      <h1>About Me</h1>
+      <ScrollAnimation
+        animateIn="bounceInRight"
+        animateOut="bounceOutLeft"
+        animateOnce={true}
+      >
+        <h1>About Me</h1>
+      </ScrollAnimation>
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
-          <p>
-            My name is Richard Germaine. I'm a Web Developer from Denver, CO.
-          </p>
+          <ScrollAnimation animateIn="fadeIn" delay="1000" animateOnce={true}>
+            <h3>
+              My name is <strong>Richard Germaine</strong>.
+            </h3>
+            <h4>I'm a Web Developer from Denver, CO.</h4>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="fadeIn" delay="3000" animateOnce={true}>
+            <ScrollAnimation
+              animateIn="bounceInLeft"
+              delay="3000"
+              animateOnce={true}
+            >
+              <h4>Whether you need minor styling on your page,</h4>
+              <h4>or a fully functional web app,</h4>
+              <h4>
+                I can help you with your project using modern developing
+                technologies and design.
+              </h4>
+            </ScrollAnimation>
+          </ScrollAnimation>
         </Box>
       </Flex>
     </Section>
     <Section id="portfolio" dark>
       <SectionTitle>My Work</SectionTitle>
-      <Portfolio />
+      <Portfolio edges={data.allPortfolioJson.edges} />
+      <PortfolioText edges={data.allPortfolioTextJson.edges} />
     </Section>
     <Section id="technologies">
-      <SectionTitle>Stuff I Use</SectionTitle>
-      <Technologies edges={data.allLogos.edges} />
+      <SectionTitle>
+        <ScrollAnimation
+          duration={2}
+          animateIn="bounceInLeft"
+          initiallyVisible={true}
+          animateOnce={true}
+        >
+          Stuff
+        </ScrollAnimation>
+        <ScrollAnimation
+          duration={3}
+          animateIn="bounceInRight"
+          initiallyVisible={true}
+          animateOnce={true}
+        >
+          I
+        </ScrollAnimation>
+        <ScrollAnimation
+          duration={4}
+          animateIn="bounceInDown"
+          initiallyVisible={false}
+          animateOnce={true}
+        >
+          Use
+        </ScrollAnimation>
+      </SectionTitle>
+      <ScrollAnimation
+        duration={4}
+        animateIn="flipInX"
+        initiallyVisible={false}
+        animateOnce={true}
+      >
+        <Technologies edges={data.allLogos.edges} />
+      </ScrollAnimation>
     </Section>
     <Section id="contact" dark>
-      <SectionTitle>Contact Me</SectionTitle>
+      <SectionTitle>
+        <ScrollAnimation animateIn="fadeIn">Contact Me</ScrollAnimation>
+      </SectionTitle>
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
           <ContactForm />
@@ -73,9 +135,9 @@ const IndexPage = ({ data }) => (
       </Flex>
     </Section>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query indexQuery {
@@ -84,6 +146,29 @@ export const pageQuery = graphql`
         node {
           url
           type
+        }
+      }
+    }
+    allPortfolioTextJson {
+      edges {
+        node {
+          project
+          about
+          link
+        }
+      }
+    }
+
+    allPortfolio: allImageSharp(
+      filter: { original: { src: { regex: "/port/" } } }
+      sort: { fields: original___src }
+    ) {
+      edges {
+        node {
+          id
+          fixed(height: 400, width: 600, grayscale: false) {
+            ...GatsbyImageSharpFixed_tracedSVG
+          }
         }
       }
     }
@@ -114,4 +199,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

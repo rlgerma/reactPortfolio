@@ -1,10 +1,12 @@
 {
-  "name": "React-Portfolio",
+  "name": "react-portfolio",
   "description": "Richard Germaine",
   "version": "1.0.0",
   "author": "Richard Germaine ",
   "dependencies": {
+    "animate.css": "^3.7.2",
     "babel-plugin-styled-components": "^1.9.2",
+    "classnames": "^2.2.6",
     "gatsby": "^2.0.64",
     "gatsby-cli": "^2.8.30",
     "gatsby-image": "^2.0.15",
@@ -18,12 +20,16 @@
     "gatsby-source-filesystem": "^2.0.11",
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-sharp": "^2.1.4",
+    "ink": "^2.7.1",
     "npm": "^6.13.7",
     "react": "^16.5.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-typist": "^2.0.4",
     "rebass": "^4.0.7",
+    "reducer": "^0.19.2",
+    "redux": "^4.0.5",
     "scroll-to-element": "^2.0.2",
     "styled-components": "^4.1.2",
     "styled-icons": "^5.3.0",
@@ -31,7 +37,8 @@
     "styled-reset": "^1.6.1",
     "typeface-open-sans": "^0.0.54",
     "typeface-pacifico": "^0.0.54",
-    "typeface-raleway": "^0.0.54"
+    "typeface-raleway": "^0.0.54",
+    "typescript": "^3.8.2"
   },
   "keywords": [
     "gatsby"
