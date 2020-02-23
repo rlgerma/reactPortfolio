@@ -1,0 +1,32 @@
+[{
+        "title": "Budget Tracker",
+        "about": "A PWA that takes in user data and stashes it locally till a connection to a secure database is made",
+        "url": "https://github.com/rlgerma92/budgetTracker"
+    },
+    {
+        "title": "Deedlist",
+        "about": "A Craigslist like web app I contributed to that stores/searches 'needs' or 'deeds' for people that need help",
+        "url": "https://github.com/adennasgittinit/deedlist"
+    },
+    {
+        "title": "Workout Tracker",
+        "about": "A web app that takes in user exercise data and returns it in a cool graph!",
+        "url": "https://github.com/rlgerma92/workoutTracker"
+    },
+    {
+        "title": "Note Taker",
+        "about": "A web app that records notes and saves them for later",
+        "url": "https://github.com/rlgerma92/noteTaker"
+    },
+    {
+        "title": "Reverse Engineer Code",
+        "about": "A guide I wrote for school that explains explains the relation between files in a website using a MVC",
+        "url": "https://github.com/rlgerma92/reverseEngineerCode"
+    },
+    {
+        "title": "Foodle",
+        "about": "A recipe search engine I contributed to",
+        "url": "https://github.com/ryansalamone/project-1"
+    }
+
+]

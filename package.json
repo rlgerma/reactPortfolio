@@ -4,9 +4,11 @@
   "version": "1.0.0",
   "author": "Richard Germaine ",
   "dependencies": {
+    "@types/react": "^16.9.22",
     "animate.css": "^3.7.2",
     "babel-plugin-styled-components": "^1.9.2",
     "classnames": "^2.2.6",
+    "eslint-plugin-react-hooks": "^2.4.0",
     "gatsby": "^2.0.64",
     "gatsby-cli": "^2.8.30",
     "gatsby-image": "^2.0.15",
@@ -38,7 +40,8 @@
     "typeface-open-sans": "^0.0.54",
     "typeface-pacifico": "^0.0.54",
     "typeface-raleway": "^0.0.54",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6"
   },
   "keywords": [
     "gatsby"
