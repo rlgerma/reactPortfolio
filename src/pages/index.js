@@ -46,20 +46,26 @@ const SectionTitle = styled.h2`
 const ImgWrapper = styled.div`
   float: left;
   display: inline-block;
+  align-content: left;
+  width: 40%;
   ${media.xs`
-    display: inline-block;
+    display: block;
     font-size:1.5em;
-    max-width:50%;
+    align-self: center;
+    width:40%;
   `}
 `;
 const TextWrapper = styled.div`
   float: right;
+  align-content: right;
   display: inline-block;
+  width: 40%;
   font-size: flex;
+  padding: 8px;
   ${media.xs`
     display: inline-block;
     font-size:1.5em;
-    max-width:30%;
+    width:40%;
   `}
 `;
 
@@ -85,19 +91,17 @@ const IndexPage = ({ data }) => (
             </h3>
             <h4>I'm a Web Developer from Denver, CO.</h4>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={3000} animateOnce={true}>
-            <ScrollAnimation
-              animateIn="bounceInLeft"
-              delay={3000}
-              animateOnce={true}
-            >
-              <h4>Whether you need minor styling on your page,</h4>
-              <h4>or a fully functional web app,</h4>
-              <h4>
-                I can help you with your project using modern developing
-                technologies and design.
-              </h4>
-            </ScrollAnimation>
+          <ScrollAnimation delay={2000} animateIn="fadeIn" animateOnce={true}>
+            <h4>Whether you need minor styling on your page,</h4>
+          </ScrollAnimation>
+          <ScrollAnimation delay={3000} animateIn="fadeIn" animateOnce={true}>
+            <h4>or a fully functional web app,</h4>
+          </ScrollAnimation>
+          <ScrollAnimation delay={4000} animateIn="fadeIn" animateOnce={true}>
+            <h4>
+              I can help you with your project using modern developing
+              technologies and design.
+            </h4>
           </ScrollAnimation>
         </Box>
       </Flex>
@@ -105,13 +109,27 @@ const IndexPage = ({ data }) => (
     <Section id="portfolio" dark>
       <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
         <SectionTitle>My Work</SectionTitle>
-        <ImgWrapper>
-          <Portfolio edges={data.allPortfolio.edges} />
-        </ImgWrapper>
-        <TextWrapper>
-          <PortfolioText edges={data.allPortfolioJson.edges} />
-        </TextWrapper>
       </ScrollAnimation>
+      <ImgWrapper>
+        <ScrollAnimation
+          offset={500}
+          animateIn="rotateInUpLeft"
+          animateOut="rotateOutDownRight"
+          animateOnce={false}
+        >
+          <Portfolio edges={data.allPortfolio.edges} />
+        </ScrollAnimation>
+      </ImgWrapper>
+      <TextWrapper>
+        <ScrollAnimation
+          offset={500}
+          animateIn="rotateInUpRight"
+          animateOut="rotateOutDownLeft"
+          animateOnce={false}
+        >
+          <PortfolioText edges={data.allPortfolioJson.edges} />
+        </ScrollAnimation>
+      </TextWrapper>
     </Section>
     <Section id="technologies">
       <SectionTitle>
@@ -191,7 +209,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          fixed(height: 400, width: 600, grayscale: false) {
+          fixed(grayscale: false) {
             ...GatsbyImageSharpFixed_tracedSVG
           }
         }

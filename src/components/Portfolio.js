@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-
+import media from '../utils/style';
 const Item = styled.div`
-  width: 60%;
+  width: 400px;
+  height: 200px;
   margin: 0 auto;
-  margin-bottom: 1.5em;
+  margin-bottom: 5%;
+  ${media.xs`
+  align-content: center;
+  `}
 `;
 
 function Portfolio(props) {

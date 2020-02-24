@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from '../utils/style';
-import Portfolio from './Portfolio';
-import { Link } from 'gatsby';
 
 const Item = styled.div`
-  width: 40%;
-  height: 425px;
+  width: 400px;
+  height: 200px;
   margin: 0 auto;
-  margin-bottom: 1.5em;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  ${media.xs`
+    visibility: hidden;
+  `}
 `;
 
 const Title = styled.h3`
@@ -21,7 +23,6 @@ const Title = styled.h3`
 `;
 
 const About = styled.div`
-  display: block;
   text-align: justify;
   clear: both;
   ${media.xs`
@@ -31,11 +32,10 @@ const About = styled.div`
 
 const Url = styled.div`
   margin-top: 5%;
-  display: block;
+  margin-bottom: 5%;
   clear: both;
-  text-align: center;
   ${media.xs`
-    text-align: center;
+    text-align: left;
   `}
 `;
 
