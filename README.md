@@ -6,4 +6,5 @@ Portfolio page built with React
 
 -PWA
 -Built with gatsby
--Contact form is functional ( Send me a message! :] )
+-Contact form is functional
+-Send me a message! :)
