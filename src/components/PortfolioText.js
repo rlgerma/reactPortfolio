@@ -1,53 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from '../utils/style';
+import Portfolio from './Portfolio';
+import { Link } from 'gatsby';
 
 const Item = styled.div`
   width: 40%;
-  height: auto;
+  height: 425px;
   margin: 0 auto;
   margin-bottom: 1.5em;
-`;
-export const Wrapper = styled.div`
-  display: block;
-  ${media.xs`
-    visibility: hidden;
-  `}
 `;
 
 const Title = styled.h3`
   display: block;
   letter-spacing: 2px;
-  font-weight: 500;
-
+  font-weight: 700;
   ${media.xs`
     float:none;
-        display:flex;
-
-    font-size:flex;
   `}
 `;
 
 const About = styled.div`
   display: block;
   text-align: justify;
-  margin-top: 5%;
   clear: both;
   ${media.xs`
     float:none;
-    display:flex;
-    font-size: flex;
   `}
 `;
 
 const Url = styled.div`
+  margin-top: 5%;
   display: block;
   clear: both;
   text-align: center;
   ${media.xs`
-    float:none;
-    display:flex;
-    font-size: flex;
+    text-align: center;
   `}
 `;
 
@@ -56,17 +44,13 @@ function PortfolioText(props) {
   return (
     <>
       {edges.map(({ node: item }) => (
-        <Wrapper>
-          <Item key={item.id}>
-            <Title>{item.title}</Title>
-
-            <About>{item.about}</About>
-
-            <Url>
-              <a href={item.url}>{item.url}</a>
-            </Url>
-          </Item>
-        </Wrapper>
+        <Item key={item.id}>
+          <Title>{item.title}</Title>
+          <About>{item.about}</About>
+          <Url>
+            <a href={item.url}>{item.url}</a>
+          </Url>
+        </Item>
       ))}
     </>
   );

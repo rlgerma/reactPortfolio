@@ -43,6 +43,25 @@ const SectionTitle = styled.h2`
     font-size:1.5em;
   `}
 `;
+const ImgWrapper = styled.div`
+  float: left;
+  display: inline-block;
+  ${media.xs`
+    display: inline-block;
+    font-size:1.5em;
+    max-width:50%;
+  `}
+`;
+const TextWrapper = styled.div`
+  float: right;
+  display: inline-block;
+  font-size: flex;
+  ${media.xs`
+    display: inline-block;
+    font-size:1.5em;
+    max-width:30%;
+  `}
+`;
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -84,15 +103,15 @@ const IndexPage = ({ data }) => (
       </Flex>
     </Section>
     <Section id="portfolio" dark>
-      <Flex alignItems="center" flexDirection="column">
-        <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce={true}>
-          <SectionTitle>My Work</SectionTitle>
-
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+        <SectionTitle>My Work</SectionTitle>
+        <ImgWrapper>
           <Portfolio edges={data.allPortfolio.edges} />
-
+        </ImgWrapper>
+        <TextWrapper>
           <PortfolioText edges={data.allPortfolioJson.edges} />
-        </ScrollAnimation>
-      </Flex>
+        </TextWrapper>
+      </ScrollAnimation>
     </Section>
     <Section id="technologies">
       <SectionTitle>
@@ -172,7 +191,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          fixed(height: 200, width: 400, grayscale: false) {
+          fixed(height: 400, width: 600, grayscale: false) {
             ...GatsbyImageSharpFixed_tracedSVG
           }
         }
