@@ -43,14 +43,6 @@ const SectionTitle = styled.h2`
     font-size:1.5em;
   `}
 `;
-const ImgWrapper = styled.div`
-  float: left;
-  display: inline-block;
-`;
-const TextWrapper = styled.div`
-  float: right;
-  display: inline-block;
-`;
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -68,16 +60,16 @@ const IndexPage = ({ data }) => (
       </ScrollAnimation>
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
-          <ScrollAnimation animateIn="fadeIn" delay="1000" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce={true}>
             <h3>
               My name is <strong>Richard Germaine</strong>.
             </h3>
             <h4>I'm a Web Developer from Denver, CO.</h4>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay="3000" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeIn" delay={3000} animateOnce={true}>
             <ScrollAnimation
               animateIn="bounceInLeft"
-              delay="3000"
+              delay={3000}
               animateOnce={true}
             >
               <h4>Whether you need minor styling on your page,</h4>
@@ -91,19 +83,17 @@ const IndexPage = ({ data }) => (
         </Box>
       </Flex>
     </Section>
-    <Flex alignItems="center" flexDirection="row">
-      <Section id="portfolio" dark>
-        <ScrollAnimation animateIn="fadeIn" delay="1000" animateOnce={true}>
+    <Section id="portfolio" dark>
+      <Flex alignItems="center" flexDirection="column">
+        <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce={true}>
           <SectionTitle>My Work</SectionTitle>
-        </ScrollAnimation>
-        <ImgWrapper>
+
           <Portfolio edges={data.allPortfolio.edges} />
-        </ImgWrapper>
-        <TextWrapper>
+
           <PortfolioText edges={data.allPortfolioJson.edges} />
-        </TextWrapper>
-      </Section>
-    </Flex>
+        </ScrollAnimation>
+      </Flex>
+    </Section>
     <Section id="technologies">
       <SectionTitle>
         <ScrollAnimation
@@ -182,7 +172,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          fixed(height: 400, width: 600, grayscale: false) {
+          fixed(height: 200, width: 400, grayscale: false) {
             ...GatsbyImageSharpFixed_tracedSVG
           }
         }
