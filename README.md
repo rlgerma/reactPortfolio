@@ -4,7 +4,6 @@ Portfolio page built with React
 
 - Desktop & Mobile Friendly
 
--PWA
--Built with gatsby
--Contact form is functional
--Send me a message! :)
+- PWA
+- Built with gatsby
+- Contact form is functional. Send me a message! :)
