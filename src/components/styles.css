@@ -1,0 +1,49 @@
+ @import url("https://use.typekit.net/ost1kus.css");
+
+ .rw {
+     display: inline-flexbox;
+ }
+
+ .wcard {
+     margin: 2em auto;
+
+ }
+
+
+
+ .wcard img {
+     /* width: 30em;
+     height: 17em;
+     padding: 1em; */
+ }
+
+ .wcard .title {
+     font-family: raleway,
+         sans-serif;
+     font-weight: 900;
+     font-style: normal;
+     color: #001100;
+     font-size: 1.5em;
+ }
+
+ .wcard .subTitle {
+     font-family: raleway,
+         sans-serif;
+     font-weight: 400;
+     font-style: italic;
+ }
+
+ .wcard .bodyCopy {
+     font-family: raleway,
+         sans-serif;
+     font-weight: 400;
+     font-style: normal;
+ }
+
+ .wcard button {
+     width: 8em;
+     font-family: raleway,
+         sans-serif;
+     font-weight: 400;
+     font-style: normal;
+ }

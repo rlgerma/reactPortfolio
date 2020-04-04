@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { Flex, Box } from 'rebass';
 import ScrollAnimation from 'react-animate-on-scroll';
 import 'animate.css/animate.min.css';
-import Portfolio from '../components/Portfolio';
 import Technologies from '../components/Technologies';
 import ContactForm from '../components/ContactForm';
 import Hero from '../components/Hero';
@@ -43,31 +42,6 @@ const SectionTitle = styled.h2`
     font-size:1.5em;
   `}
 `;
-const ImgWrapper = styled.div`
-  float: left;
-  display: inline-block;
-  align-content: left;
-  width: 40%;
-  ${media.xs`
-    display: block;
-    font-size:1.5em;
-    align-self: center;
-    width:40%;
-  `}
-`;
-const TextWrapper = styled.div`
-  float: right;
-  align-content: right;
-  display: inline-block;
-  width: 40%;
-  font-size: flex;
-  padding: 8px;
-  ${media.xs`
-    display: inline-block;
-    font-size:1.5em;
-    width:40%;
-  `}
-`;
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -87,7 +61,8 @@ const IndexPage = ({ data }) => (
         <Box px={2} width={[1, 1 / 2]}>
           <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce={true}>
             <h3>
-              My name is <strong>Richard Germaine</strong>.
+              My name is
+              <br /> <strong>Richard Germaine</strong>.
             </h3>
             <h4>I'm a Web Developer from Denver, CO.</h4>
           </ScrollAnimation>
@@ -110,26 +85,7 @@ const IndexPage = ({ data }) => (
       <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
         <SectionTitle>My Work</SectionTitle>
       </ScrollAnimation>
-      <ImgWrapper>
-        <ScrollAnimation
-          offset={500}
-          animateIn="rotateInUpLeft"
-          animateOut="rotateOutDownRight"
-          animateOnce={false}
-        >
-          <Portfolio edges={data.allPortfolio.edges} />
-        </ScrollAnimation>
-      </ImgWrapper>
-      <TextWrapper>
-        <ScrollAnimation
-          offset={500}
-          animateIn="rotateInUpRight"
-          animateOut="rotateOutDownLeft"
-          animateOnce={false}
-        >
-          <PortfolioText edges={data.allPortfolioJson.edges} />
-        </ScrollAnimation>
-      </TextWrapper>
+      <PortfolioText />
     </Section>
     <Section id="technologies">
       <SectionTitle>
