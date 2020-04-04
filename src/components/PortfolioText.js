@@ -26,6 +26,13 @@ const PortfolioText = () => (
           currentFigureScale={1.3}
           enableHeading={false}
           media={{
+            '@media (max-width: 500px)': {
+              width: '400px',
+              height: '600px',
+              fontSize: '6px',
+              padding: '1em',
+              margin: '0 auto',
+            },
             '@media (max-width: 900px)': {
               width: '600px',
               height: '300px',

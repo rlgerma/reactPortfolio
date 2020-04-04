@@ -106,7 +106,7 @@ const IndexPage = ({ data }) => (
           initiallyVisible={true}
           animateOnce={true}
         >
-          Stuff
+          Tech
         </ScrollAnimation>
         <ScrollAnimation
           duration={3}
