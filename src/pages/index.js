@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { graphql } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { Flex, Box } from 'rebass';
@@ -9,7 +9,6 @@ import ContactForm from '../components/ContactForm';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import HeroText from '../components/HeroText';
-import PortfolioText from '../components/PortfolioText';
 import Social from '../components/Social';
 
 import media from '../utils/style';
@@ -42,6 +41,18 @@ const SectionTitle = styled.h2`
     font-size:1.5em;
   `}
 `;
+
+const LazyCoverflow = () => {
+  if (typeof window === 'undefined') return <span>loading...</span>;
+  const Component = React.lazy(() => import('../components/PortfolioText'));
+  return (
+    <>
+      <Suspense fallback={<span>loading...</span>}>
+        <Component />
+      </Suspense>
+    </>
+  );
+};
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -85,7 +96,7 @@ const IndexPage = ({ data }) => (
       <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
         <SectionTitle>My Work</SectionTitle>
       </ScrollAnimation>
-      <PortfolioText />
+      <LazyCoverflow />
     </Section>
     <Section id="technologies">
       <SectionTitle>

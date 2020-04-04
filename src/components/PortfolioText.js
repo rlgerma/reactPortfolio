@@ -13,7 +13,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-const PortfolioText = props => (
+const PortfolioText = () => (
   // card #1
   <div className="contain">
     <div className="rw">
