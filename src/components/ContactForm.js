@@ -1,7 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import 'whatwg-fetch'; // Fetch Polyfill
 
-const Form = styled.form``
+const Form = styled.form``;
+
+const Name = styled.input`
+  border: 0;
+  padding: 10px;
+  color: #333;
+  border: solid 1px #ccc;
+  margin: 0 0 20px;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+`;
 
 const Email = styled.input`
   border: 0;
@@ -12,7 +24,7 @@ const Email = styled.input`
   border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
-`
+`;
 
 const Message = styled.textarea`
   border: 0;
@@ -23,7 +35,7 @@ const Message = styled.textarea`
   border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
-`
+`;
 
 const Submit = styled.input`
   border: solid 1px #ccc;
@@ -35,7 +47,7 @@ const Submit = styled.input`
   cursor: pointer;
   border-radius: 0;
   background-color: #fff;
-`
+`;
 
 const ModalButton = styled.button`
   border: solid 1px #ccc;
@@ -47,7 +59,7 @@ const ModalButton = styled.button`
   cursor: pointer;
   border-radius: 0;
   background-color: #fff;
-`
+`;
 
 const Modal = styled.div`
   background: ghostwhite;
@@ -70,7 +82,7 @@ const Modal = styled.div`
     line-height: 1.6;
     margin: 0 0 2em 0;
   }
-`
+`;
 
 const ModalOverlay = styled.div`
   top: 0;
@@ -82,60 +94,97 @@ const ModalOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   opacity: ${props => (props.visible ? '1' : '0')};
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-`
+`;
+
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 class ContactForm extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    super(props);
     this.state = {
-      status: '',
+      name: '',
+      email: '',
+      message: '',
       showModal: false,
       submitting: false,
-    }
+    };
   }
-  handleSubmit(ev) {
+
+  handleChange = e => {
+    const { target } = e;
+    const { value } = target;
+    const { name } = target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleSubmit = e => {
     this.setState({
       submitting: true,
+    });
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state }),
     })
-    const form = ev.target
-    const data = new FormData(form)
-    const xhr = new XMLHttpRequest()
-    xhr.open(form.method, form.action)
-    xhr
-      .setRequestHeader('Accept', 'application/json')
-      .then(this.handleSuccess)
-      .catch(error => alert(error))
+      .then(() => alert('Success!'))
+      .catch(error => alert(error));
 
-    ev.preventDefault()
-    xhr.send(data)
-  }
+    e.preventDefault();
+  };
 
   handleSuccess = () => {
     this.setState({
+      name: '',
       email: '',
       message: '',
       showModal: true,
       submitting: false,
-    })
-  }
+    });
+  };
 
   closeModal = () => {
-    this.setState({ showModal: false })
-  }
+    this.setState({ showModal: false });
+  };
+
   render() {
-    const { showModal, submitting } = this.props
+    const { name, email, message, showModal, submitting } = this.state;
     return (
       <Form
-        onSubmit={this.submitForm}
-        action="https://formspree.io/moqeyjjy"
-        method="POST"
+        name="contact"
+        onSubmit={this.handleSubmit}
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        overlay={showModal}
+        onClick={this.closeModal}
       >
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          Don’t fill this out: <input name="bot" onChange={this.handleChange} />
+        </p>
+
+        <Name
+          name="name"
+          type="text"
+          title="Name"
+          placeholder="Full Name"
+          value={name}
+          onChange={this.handleChange}
+          required
+          disabled={submitting}
+        />
         <Email
           name="email"
           type="email"
           title="Email"
           placeholder="Email"
-          onChange={this.handleInputChange}
+          value={email}
+          onChange={this.handleChange}
           required
           disabled={submitting}
         />
@@ -144,7 +193,8 @@ class ContactForm extends React.Component {
           title="Message"
           type="text"
           placeholder="Message"
-          onChange={this.handleInputChange}
+          value={message}
+          onChange={this.handleChange}
           required
           disabled={submitting}
         />
@@ -156,14 +206,14 @@ class ContactForm extends React.Component {
         />
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
         <Modal visible={showModal}>
-          <p>
-            Thank you for reaching out. I will get back to you as soon as
-            possible.
-          </p>
+          <p>Thanks for reaching out! I'll get back to you shortly.</p>
+          <br />
+          <p>- Richard</p>
           <ModalButton onClick={this.closeModal}>Okay</ModalButton>
         </Modal>
       </Form>
-    )
+    );
   }
 }
-export default ContactForm
+
+export default ContactForm;

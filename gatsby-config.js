@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ricky Germaine',
+    title: 'Richard Germaine Official Website',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -38,7 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Ricky Germaine',
+        name: 'Richard Germaine',
         short_name: 'rgermaine.com',
         start_url: '/',
         background_color: '#037F8C',
@@ -63,4 +63,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
   ],
-}
+};

@@ -1,18 +1,14 @@
  @import url("https://use.typekit.net/ost1kus.css");
 
+
+
+
  .rw {
-     display: inline-flexbox;
- }
-
- .wcard {
-     margin: 2em auto;
-
- }
-
-
-
- .wcard img {
      display: initial;
+ }
+
+ .mobileContain {
+     display: none;
  }
 
  .wcard .title {
@@ -36,6 +32,7 @@
          sans-serif;
      font-weight: 400;
      font-style: normal;
+     font-size: normal;
  }
 
  .wcard button {
@@ -46,16 +43,18 @@
      font-style: normal;
  }
 
- @media (max-width: 500px) {
-     .wcard {
-         margin: 2em 0;
-     }
-
+ @media screen and (max-width: 700px) {
      .rw {
-         display: flexbox;
+         display: none;
      }
 
-     .wcard .title {
+     .mobileContain {
+         display: block;
+         width: 80%;
+         margin: 1em auto;
+     }
+
+     .mobileContain .title {
          font-family: raleway,
              sans-serif;
          font-weight: 900;
@@ -64,7 +63,7 @@
          font-size: 1em;
      }
 
-     .wcard .bodyCopy {
+     .mobileContain .bodyCopy {
          font-family: raleway,
              sans-serif;
          font-weight: 400;
@@ -72,12 +71,13 @@
          font-size: 1em;
      }
 
-     .wcard button {
-         width: 1em;
+     .mobileContain button {
+         width: 4em;
          font-family: raleway,
              sans-serif;
          font-weight: 400;
          font-style: normal;
          font-size: 1em;
+         padding: 0;
      }
  }

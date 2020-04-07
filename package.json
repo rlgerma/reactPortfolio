@@ -45,6 +45,7 @@
     "typeface-pacifico": "^0.0.54",
     "typeface-raleway": "^0.0.54",
     "typescript": "^3.8.2",
+    "whatwg-fetch": "3.0.0",
     "webpack": "^4.41.6"
   },
   "keywords": [
