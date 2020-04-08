@@ -130,6 +130,7 @@ const IndexPage = ({ data }) => (
         <ScrollAnimation
           animateIn="bounceInDown"
           animateOut="bounceOutUp"
+          offset={200}
           initiallyVisible={false}
         >
           Technologies
