@@ -113,16 +113,9 @@ class ContactForm extends React.Component {
     };
   }
 
-  handleInputChange = event => {
-    const { target } = event;
-    const { value } = target;
-    const { name } = target;
-    this.setState({
-      [name]: value,
-    });
-  };
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
-  handleSubmit = event => {
+  handleSubmit = e => {
     this.setState({
       submitting: true,
     });
@@ -133,7 +126,7 @@ class ContactForm extends React.Component {
     })
       .then(this.handleSuccess)
       .catch(error => alert(error));
-    event.preventDefault();
+    e.preventDefault();
   };
 
   handleSuccess = () => {
@@ -151,13 +144,13 @@ class ContactForm extends React.Component {
   };
 
   render() {
-    const { name, email, message, showModal, submitting } = this.props;
+    const { name, email, message, showModal, submitting } = this.state;
     return (
       <Form
         name="contact"
         onSubmit={this.handleSubmit}
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        data-netlify-honeypot="bot"
         overlay={showModal}
         onClick={this.closeModal}
       >
@@ -172,7 +165,7 @@ class ContactForm extends React.Component {
           title="Name"
           placeholder="Full Name"
           value={name}
-          onChange={this.handleInputChange}
+          onChange={this.handleChange}
           required
           disabled={submitting}
         />
@@ -182,7 +175,7 @@ class ContactForm extends React.Component {
           title="Email"
           placeholder="Email"
           value={email}
-          onChange={this.handleInputChange}
+          onChange={this.handleChange}
           required
           disabled={submitting}
         />
@@ -192,7 +185,7 @@ class ContactForm extends React.Component {
           type="text"
           placeholder="Message"
           value={message}
-          onChange={this.handleInputChange}
+          onChange={this.handleChange}
           required
           disabled={submitting}
         />

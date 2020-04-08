@@ -10,8 +10,10 @@
     "bootstrap": "4.4.1",
     "classnames": "^2.2.6",
     "eslint-plugin-react-hooks": "^2.4.0",
+    "formik": "^1.5.8",
     "gatsby": "^2.0.64",
     "gatsby-cli": "^2.8.30",
+    "gatsby-link": "^2.3.2",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -24,7 +26,6 @@
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-sharp": "^2.1.4",
     "ink": "^2.7.1",
-    "npm": "^6.13.7",
     "radium": "0.26.0",
     "react": "^16.5.1",
     "reactstrap": "8.4.1",
@@ -45,7 +46,8 @@
     "typeface-pacifico": "^0.0.54",
     "typeface-raleway": "^0.0.54",
     "typescript": "^3.8.2",
-    "webpack": "^4.41.6"
+    "webpack": "^4.41.6",
+    "yup": "0.28.3"
   },
   "keywords": [
     "gatsby"

@@ -141,11 +141,6 @@ const IndexPage = ({ data }) => (
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
           <ContactForm />
-          <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <textarea name="message"></textarea>
-          </form>
         </Box>
       </Flex>
     </Section>
