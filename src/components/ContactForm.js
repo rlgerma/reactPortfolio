@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import Pattern from '../images/move.gif';
+import ScrollAnimation from 'react-animate-on-scroll';
+import 'animate.css/animate.min.css';
 
 const Form = styled.form``;
 
@@ -37,7 +40,7 @@ const Message = styled.textarea`
 `;
 
 const Submit = styled.input`
-  border: solid 1px #ccc;
+  border: solid 0.1px #292929;
   padding: 15px 30px;
   margin: 0 0 20px;
   text-transform: uppercase;
@@ -46,18 +49,45 @@ const Submit = styled.input`
   cursor: pointer;
   border-radius: 0;
   background-color: #fff;
+  transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  &:hover {
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    background-image: url(${Pattern});
+    text-decoration: none;
+    transform: scale(1.3);
+  }
 `;
 
 const ModalButton = styled.button`
   border: solid 1px #ccc;
   padding: 15px 30px;
-  margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: bold;
   color: #333;
   cursor: pointer;
   border-radius: 0;
   background-color: #fff;
+  margin: 0 auto;
+  transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  &:hover {
+    border: solid 1px ghostwhite;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    background-image: url(${Pattern});
+    text-decoration: none;
+    transform: scale(1.3);
+  }
 `;
 
 const Modal = styled.div`
@@ -79,7 +109,12 @@ const Modal = styled.div`
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
   p {
     line-height: 1.6;
-    margin: 0 0 2em 0;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #001100;
+    margin: 1em auto;
   }
 `;
 
@@ -158,37 +193,57 @@ class ContactForm extends React.Component {
         <p hidden>
           Don’t fill this out: <input name="bot" onChange={this.handleChange} />
         </p>
-
-        <Name
-          name="name"
-          type="text"
-          title="Name"
-          placeholder="Full Name"
-          value={name}
-          onChange={this.handleChange}
-          required
-          disabled={submitting}
-        />
-        <Email
-          name="email"
-          type="email"
-          title="Email"
-          placeholder="Email"
-          value={email}
-          onChange={this.handleChange}
-          required
-          disabled={submitting}
-        />
-        <Message
-          name="message"
-          title="Message"
-          type="text"
-          placeholder="Message"
-          value={message}
-          onChange={this.handleChange}
-          required
-          disabled={submitting}
-        />
+        <ScrollAnimation
+          duration={2}
+          animateIn="bounceInLeft"
+          animateOut="bounceOutRight"
+          initiallyVisible={false}
+        >
+          <Name
+            name="name"
+            type="text"
+            title="Name"
+            placeholder="Full Name"
+            value={name}
+            onChange={this.handleChange}
+            required
+            disabled={submitting}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation
+          duration={3}
+          animateIn="bounceInRight"
+          animateOut="bounceOutLeft"
+          initiallyVisible={false}
+        >
+          <Email
+            name="email"
+            type="email"
+            title="Email"
+            placeholder="Email"
+            value={email}
+            onChange={this.handleChange}
+            required
+            disabled={submitting}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation
+          duration={3}
+          animateIn="bounceInUp"
+          animateOut="bounceOutDown"
+          initiallyVisible={false}
+        >
+          <Message
+            name="message"
+            title="Message"
+            type="text"
+            placeholder="Message"
+            value={message}
+            onChange={this.handleChange}
+            required
+            disabled={submitting}
+          />
+        </ScrollAnimation>
         <Submit
           name="submit"
           type="submit"
@@ -197,9 +252,9 @@ class ContactForm extends React.Component {
         />
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
         <Modal visible={showModal}>
-          <p>Thanks for reaching out! I'll get back to you shortly.</p>
-          <br />
-          <p>- Richard</p>
+          <p>Thanks for reaching out!</p>
+          <p>I'll get back to you shortly.</p>
+          <p>-Richard </p>
           <ModalButton onClick={this.closeModal}>Okay</ModalButton>
         </Modal>
       </Form>

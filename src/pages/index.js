@@ -62,28 +62,48 @@ const IndexPage = ({ data }) => (
     </Hero>
     <Section id="about-me">
       <ScrollAnimation
-        animateIn="bounceInRight"
-        animateOut="bounceOutLeft"
-        animateOnce={true}
+        animateIn="bounceInDown"
+        animateOut="bounceOutUp"
+        initiallyVisible={false}
       >
         <h1>About Me</h1>
       </ScrollAnimation>
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
-          <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce={true}>
+          <ScrollAnimation
+            animateIn="fadeIn"
+            animateOut="fadeOut"
+            delay={1000}
+            initiallyVisible={false}
+          >
             <h3>
               My name is
               <br /> <strong>Richard Germaine</strong>.
             </h3>
             <h4>I'm a Web Developer from Denver, CO.</h4>
           </ScrollAnimation>
-          <ScrollAnimation delay={2000} animateIn="fadeIn" animateOnce={true}>
+          <ScrollAnimation
+            delay={2000}
+            animateIn="fadeIn"
+            animateOut="fadeOut"
+            initiallyVisible={false}
+          >
             <h4>Whether you need minor styling on your page,</h4>
           </ScrollAnimation>
-          <ScrollAnimation delay={3000} animateIn="fadeIn" animateOnce={true}>
+          <ScrollAnimation
+            delay={3000}
+            animateIn="fadeIn"
+            animateOut="fadeOut"
+            initiallyVisible={false}
+          >
             <h4>or a fully functional web app,</h4>
           </ScrollAnimation>
-          <ScrollAnimation delay={4000} animateIn="fadeIn" animateOnce={true}>
+          <ScrollAnimation
+            delay={4000}
+            animateIn="fadeIn"
+            animateOut="fadeOut"
+            initiallyVisible={false}
+          >
             <h4>
               I can help you with your project using modern developing
               technologies and design.
@@ -93,50 +113,46 @@ const IndexPage = ({ data }) => (
       </Flex>
     </Section>
     <Section id="portfolio" dark>
-      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+      <ScrollAnimation
+        duration={2}
+        animateIn="bounceInDown"
+        animateOut="bounceOutUp"
+        initiallyVisible={false}
+      >
         <SectionTitle>My Work</SectionTitle>
+        <ScrollAnimation duration={2} animateIn="bounceInUp" animateOnce={true}>
+          <LazyCoverflow />
+        </ScrollAnimation>
       </ScrollAnimation>
-      <LazyCoverflow />
     </Section>
     <Section id="technologies">
       <SectionTitle>
         <ScrollAnimation
-          duration={2}
-          animateIn="bounceInLeft"
-          initiallyVisible={true}
-          animateOnce={true}
-        >
-          Tech
-        </ScrollAnimation>
-        <ScrollAnimation
-          duration={3}
-          animateIn="bounceInRight"
-          initiallyVisible={true}
-          animateOnce={true}
-        >
-          I
-        </ScrollAnimation>
-        <ScrollAnimation
-          duration={4}
           animateIn="bounceInDown"
+          animateOut="bounceOutUp"
           initiallyVisible={false}
-          animateOnce={true}
         >
-          Use
+          Technologies
         </ScrollAnimation>
       </SectionTitle>
       <ScrollAnimation
-        duration={4}
-        animateIn="flipInX"
+        animateIn="bounceInUp"
+        animateOut="bounceOutDown"
         initiallyVisible={false}
-        animateOnce={true}
       >
         <Technologies edges={data.allLogos.edges} />
       </ScrollAnimation>
     </Section>
     <Section id="contact" dark>
       <SectionTitle>
-        <ScrollAnimation animateIn="fadeIn">Contact Me</ScrollAnimation>
+        <ScrollAnimation
+          duration={1}
+          animateIn="bounceInDown"
+          animateOut="bounceOutUp"
+          initiallyVisible={false}
+        >
+          Contact Me
+        </ScrollAnimation>
       </SectionTitle>
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
