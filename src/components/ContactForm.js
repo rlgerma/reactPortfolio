@@ -251,6 +251,7 @@ class ContactForm extends React.Component {
           disabled={submitting}
         />
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
+
         <Modal visible={showModal}>
           <p>Thanks for reaching out!</p>
           <p>I'll get back to you shortly.</p>

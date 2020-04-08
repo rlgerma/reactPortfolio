@@ -137,7 +137,8 @@ const IndexPage = ({ data }) => (
       </SectionTitle>
       <ScrollAnimation
         animateIn="bounceInUp"
-        animateOut="bounceOutDown"
+        animateOut="bounceOutUp"
+        offset={200}
         initiallyVisible={false}
       >
         <Technologies edges={data.allLogos.edges} />
