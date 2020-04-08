@@ -113,8 +113,8 @@ class ContactForm extends React.Component {
     };
   }
 
-  handleChange = e => {
-    const { target } = e;
+  handleInputChange = event => {
+    const { target } = event;
     const { value } = target;
     const { name } = target;
     this.setState({
@@ -122,7 +122,7 @@ class ContactForm extends React.Component {
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = event => {
     this.setState({
       submitting: true,
     });
@@ -131,10 +131,9 @@ class ContactForm extends React.Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...this.state }),
     })
-      .then(() => alert('Success!'))
+      .then(this.handleSuccess)
       .catch(error => alert(error));
-
-    e.preventDefault();
+    event.preventDefault();
   };
 
   handleSuccess = () => {
@@ -152,7 +151,7 @@ class ContactForm extends React.Component {
   };
 
   render() {
-    const { name, email, message, showModal, submitting } = this.state;
+    const { name, email, message, showModal, submitting } = this.props;
     return (
       <Form
         name="contact"
@@ -173,7 +172,7 @@ class ContactForm extends React.Component {
           title="Name"
           placeholder="Full Name"
           value={name}
-          onChange={this.handleChange}
+          onChange={this.handleInputChange}
           required
           disabled={submitting}
         />
@@ -183,7 +182,7 @@ class ContactForm extends React.Component {
           title="Email"
           placeholder="Email"
           value={email}
-          onChange={this.handleChange}
+          onChange={this.handleInputChange}
           required
           disabled={submitting}
         />
@@ -193,7 +192,7 @@ class ContactForm extends React.Component {
           type="text"
           placeholder="Message"
           value={message}
-          onChange={this.handleChange}
+          onChange={this.handleInputChange}
           required
           disabled={submitting}
         />
