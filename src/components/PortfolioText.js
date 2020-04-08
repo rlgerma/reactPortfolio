@@ -23,13 +23,13 @@ const PortfolioText = () => (
     <div className="contain">
       <div className="rw">
         <Coverflow
+          height="600"
           displayQuantityOfSide={4}
           navigation={true}
           enableScroll={false}
           enableHeading={false}
           currentFigureScale={1}
-          otherFigureScale={0.25}
-          // style={'margin: "5em";'}
+          otherFigureScale={0.2}
         >
           <div
             onClick={() => fn()}
