@@ -1,14 +1,14 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-import styled, { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
-import styledNormalize from 'styled-normalize'
-import 'typeface-pacifico'
-import 'typeface-raleway'
-import 'typeface-open-sans'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import styled, { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+import styledNormalize from 'styled-normalize';
+import 'typeface-pacifico';
+import 'typeface-raleway';
+import 'typeface-open-sans';
 
-import Navbar from './Navbar'
+import Navbar from './Navbar';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     color: #292929;
   }
 
-`
+`;
 
 const Body = styled.div`
   display: flex;
@@ -52,7 +52,7 @@ const Body = styled.div`
   img {
     margin-bottom: 0;
   }
-`
+`;
 
 const Footer = styled.footer`
   display: flex;
@@ -64,12 +64,12 @@ const Footer = styled.footer`
   img {
     margin-bottom: 0;
   }
-`
+`;
 
 const FooterText = styled.div`
   font-size: 0.7em;
   padding: 3em;
-`
+`;
 
 const Layout = ({ children, noMenu }) => (
   <StaticQuery
@@ -106,11 +106,21 @@ const Layout = ({ children, noMenu }) => (
           {children}
           <Footer>
             <FooterText>rgermaine.com</FooterText>
+            <div className="moosic" style={{ visibility: 'hidden' }}>
+              <iframe
+                width="20%"
+                height="100"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/735465244&color=%233b1e2a&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+              ></iframe>
+            </div>
           </Footer>
         </Body>
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;
