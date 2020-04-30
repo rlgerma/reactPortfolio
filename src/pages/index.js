@@ -150,7 +150,7 @@ const IndexPage = ({ data }) => (
         <ScrollAnimation
           duration={1}
           animateIn="bounceInDown"
-          animateOut="bounceOutUp"
+          animateOnce={true}
           initiallyVisible={false}
         >
           Contact Me
