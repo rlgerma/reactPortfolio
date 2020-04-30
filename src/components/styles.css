@@ -2,10 +2,20 @@
 
 
  .card {
-     width: 30em;
-     height: 32em;
-     margin: 2em 5em;
+     width: 40%;
+     height: 35rem;
+     margin: 1em 5%;
      float: left;
+     transition: 0.2s ease all;
+     -webkit-transition: 0.2s ease all;
+     -o-transition: 0.2s ease all;
+ }
+
+ .card:hover {
+     cursor: pointer;
+     -webkit-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+     transform: scale(1.1);
  }
 
  .title.card-title {
