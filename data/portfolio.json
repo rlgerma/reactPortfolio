@@ -1,32 +1,60 @@
 [{
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1586323615/jfnmusic_iga0wb.jpg",
+        "title": "Joyful Noise Music",
+        "tech": "GatsbyJS/Netlify",
+        "about": "A business website made for a music school & store in Brighton, CO.",
+        "url": "https://joyfulnoisemusic.org/"
+
+    },
+    {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,f_auto,h_200,w_400/v1585961986/01-bt-port_kbbfoe.jpg",
         "title": "Budget Tracker",
+        "tech": "GatsbyJS/Netlify/Auth0/MongoDB",
         "about": "A PWA that takes in user data and stashes it locally till a connection to a secure database is made",
         "url": "https://github.com/rlgerma92/budgetTracker"
+
     },
     {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1585961986/02-dl-port_jykq0f.jpg",
         "title": "Deedlist",
+        "tech": "GatsbyJS/Netlify/Heroku/MySQL",
         "about": "A Craigslist like web app I contributed to that stores/searches 'needs' or 'deeds' for people that need help",
-        "url": "https://github.com/adennasgittinit/deedlist"
+        "url": "https://newdeedlist.netlify.app/"
     },
     {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1585961986/03-wt-port_wvdi4f.jpg",
         "title": "Workout Tracker",
+        "tech": "ExpressJs/GraphJs/MongoDB/Bootstrap",
         "about": "A web app that takes in user exercise data and returns it in a cool graph!",
         "url": "https://github.com/rlgerma92/workoutTracker"
     },
     {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1586323938/cbd-landing_ktiacf.jpg",
+        "title": "CBDistillery Landing Page",
+        "tech": "Gatsby/React/Netlify/Bootstrap",
+        "about": "A landing page I made for CBDistillery meant to link to external e-commerce site.",
+        "url": "https://silly-dubinsky-dbe3af.netlify.com/"
+    },
+    {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1585961986/04-n-port_ydte3o.jpg",
         "title": "Note Taker",
-        "about": "A web app that records notes and saves them for later",
-        "url": "https://github.com/rlgerma92/noteTaker"
+        "tech": "Express.Js/Bootstrap",
+        "about": "An online note taking tool that creates, saves, and deletes your personalized notes.No sign up required!",
+        "url": "https://agile-taiga-39753.herokuapp.com/"
     },
     {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1585961986/05-rec-port_gzjqce.jpg",
         "title": "Reverse Engineer Code",
-        "about": "A guide I wrote for school that explains explains the relation between files in a website using a MVC",
-        "url": "https://github.com/rlgerma92/reverseEngineerCode"
+        "tech": "Blog post",
+        "about": "An article I wrote about deconstructing the various files in modern MVC frameworks",
+        "url": "https://spark.adobe.com/page/Pkquz58VaeU0F/"
     },
     {
+        "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_200,w_400/v1585961987/06-f-port_v81l1s.jpg",
         "title": "Foodle",
-        "about": "A recipe search engine I contributed to",
-        "url": "https://github.com/ryansalamone/project-1"
+        "tech": "Bootstrap/External API calls",
+        "about": "A meal recipe search engine I co-engineered with some former classmates at University of Denver. Now deprecated.",
+        "url": "https://rlgerma92.github.io/Project-One/"
     }
 
 ]

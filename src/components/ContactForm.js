@@ -59,6 +59,7 @@ const Submit = styled.input`
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     background-image: url(${Pattern});
+    background-color: #fff;
     text-decoration: none;
     transform: scale(1.3);
   }
@@ -196,7 +197,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={2}
           animateIn="bounceInLeft"
-          animateOut="bounceOutRight"
+          animateOnce={true}
           initiallyVisible={false}
         >
           <Name
@@ -213,7 +214,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={3}
           animateIn="bounceInRight"
-          animateOut="bounceOutLeft"
+          animateOnce={true}
           initiallyVisible={false}
         >
           <Email
@@ -230,7 +231,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={3}
           animateIn="bounceInUp"
-          animateOut="bounceOutDown"
+          animateOnce={true}
           initiallyVisible={false}
         >
           <Message
@@ -244,12 +245,19 @@ class ContactForm extends React.Component {
             disabled={submitting}
           />
         </ScrollAnimation>
-        <Submit
-          name="submit"
-          type="submit"
-          value={submitting ? 'Sending...' : 'Send'}
-          disabled={submitting}
-        />
+        <ScrollAnimation
+          duration={3}
+          animateIn="bounceInUp"
+          animateOnce={true}
+          initiallyVisible={false}
+        >
+          <Submit
+            name="submit"
+            type="submit"
+            value={submitting ? 'Sending...' : 'Send'}
+            disabled={submitting}
+          />
+        </ScrollAnimation>
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
 
         <Modal visible={showModal}>

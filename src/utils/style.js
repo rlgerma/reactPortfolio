@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 const media = {
   ws: (...args) => css`
@@ -26,6 +26,6 @@ const media = {
       ${css(...args)}
     }
   `,
-}
+};
 
-export default media
+export default media;

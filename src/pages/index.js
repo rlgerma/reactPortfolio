@@ -1,15 +1,16 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { Flex, Box } from 'rebass';
 import ScrollAnimation from 'react-animate-on-scroll';
-import 'animate.css/animate.min.css';
 import Technologies from '../components/Technologies';
 import ContactForm from '../components/ContactForm';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import HeroText from '../components/HeroText';
 import Social from '../components/Social';
+import Portfolio from '../components/Portfolio';
+import 'animate.css/animate.min.css';
 
 import media from '../utils/style';
 
@@ -42,17 +43,17 @@ const SectionTitle = styled.h2`
   `}
 `;
 
-const LazyCoverflow = () => {
-  if (typeof window === 'undefined') return <span>loading...</span>;
-  const Component = React.lazy(() => import('../components/PortfolioText'));
-  return (
-    <>
-      <Suspense fallback={<span>loading...</span>}>
-        <Component />
-      </Suspense>
-    </>
-  );
-};
+// const LazyCoverflow = () => {
+//   if (typeof window === 'undefined') return <span>loading...</span>;
+//   const Component = React.lazy(() => import('../components/PortfolioText'));
+//   return (
+//     <>
+//       <Suspense fallback={<span>loading...</span>}>
+//         <Component />
+//       </Suspense>
+//     </>
+//   );
+// };
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -63,7 +64,7 @@ const IndexPage = ({ data }) => (
     <Section id="about-me">
       <ScrollAnimation
         animateIn="bounceInDown"
-        animateOut="bounceOutUp"
+        animateOnce={true}
         initiallyVisible={false}
       >
         <h1>About Me</h1>
@@ -72,7 +73,7 @@ const IndexPage = ({ data }) => (
         <Box px={2} width={[1, 1 / 2]}>
           <ScrollAnimation
             animateIn="fadeIn"
-            animateOut="fadeOut"
+            animateOnce={true}
             delay={1000}
             initiallyVisible={false}
           >
@@ -80,12 +81,12 @@ const IndexPage = ({ data }) => (
               My name is
               <br /> <strong>Richard Germaine</strong>.
             </h3>
-            <h4>I'm a Web Developer from Denver, CO.</h4>
+            <h4>I'm a Web Developer from Denver.</h4>
           </ScrollAnimation>
           <ScrollAnimation
             delay={2000}
             animateIn="fadeIn"
-            animateOut="fadeOut"
+            animateOnce={true}
             initiallyVisible={false}
           >
             <h4>Whether you need minor styling on your page,</h4>
@@ -93,7 +94,7 @@ const IndexPage = ({ data }) => (
           <ScrollAnimation
             delay={3000}
             animateIn="fadeIn"
-            animateOut="fadeOut"
+            animateOnce={true}
             initiallyVisible={false}
           >
             <h4>or a fully functional web app,</h4>
@@ -101,7 +102,7 @@ const IndexPage = ({ data }) => (
           <ScrollAnimation
             delay={4000}
             animateIn="fadeIn"
-            animateOut="fadeOut"
+            animateOnce={true}
             initiallyVisible={false}
           >
             <h4>
@@ -115,21 +116,20 @@ const IndexPage = ({ data }) => (
     <Section id="portfolio" dark>
       <ScrollAnimation
         duration={2}
-        animateIn="bounceInDown"
-        animateOut="bounceOutUp"
+        animateIn="bounceInLeft"
+        animateOnce={true}
+        offset={200}
         initiallyVisible={false}
       >
         <SectionTitle>My Work</SectionTitle>
-        <ScrollAnimation duration={2} animateIn="bounceInUp" animateOnce={true}>
-          <LazyCoverflow />
-        </ScrollAnimation>
+        <Portfolio edges={data.allPortfolioJson.edges} />
       </ScrollAnimation>
     </Section>
     <Section id="technologies">
       <SectionTitle>
         <ScrollAnimation
           animateIn="bounceInDown"
-          animateOut="bounceOutUp"
+          animateOnce={true}
           offset={200}
           initiallyVisible={false}
         >
@@ -138,7 +138,7 @@ const IndexPage = ({ data }) => (
       </SectionTitle>
       <ScrollAnimation
         animateIn="bounceInUp"
-        animateOut="bounceOutUp"
+        animateOnce={true}
         offset={200}
         initiallyVisible={false}
       >
@@ -180,9 +180,12 @@ export const pageQuery = graphql`
     allPortfolioJson {
       edges {
         node {
-          title
           about
+          image
+          id
+          title
           url
+          tech
         }
       }
     }
