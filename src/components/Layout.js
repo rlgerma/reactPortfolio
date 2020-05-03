@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import styledNormalize from 'styled-normalize';
+import Link from './Link';
 import 'typeface-pacifico';
 import 'typeface-raleway';
 import 'typeface-open-sans';
@@ -99,13 +100,25 @@ const Layout = ({ children, noMenu }) => (
             <html lang="en" />
             <meta
               name="description"
-              content="I am a full stack web developer!"
+              content="Richard Germaine - Full Stack Developer from Denver, Co"
             />
           </Helmet>
           <Navbar menu={data.allMenuJson.edges} noMenu={noMenu} />
           {children}
           <Footer>
-            <FooterText>rgermaine.com</FooterText>
+            <FooterText>
+              Thanks for checking out my site
+              <br />
+              <br /> You can also find me on
+              <br />
+              <Link to="https://www.linkedin.com/in/richard-germaine-04261318b/">
+                LinkedIn
+              </Link>{' '}
+              - <Link to="https://github.com/rlgerma92">GitHub</Link>
+              <br />
+              <br />
+              rgermaine.com
+            </FooterText>
           </Footer>
         </Body>
       </>

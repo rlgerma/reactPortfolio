@@ -43,18 +43,6 @@ const SectionTitle = styled.h2`
   `}
 `;
 
-// const LazyCoverflow = () => {
-//   if (typeof window === 'undefined') return <span>loading...</span>;
-//   const Component = React.lazy(() => import('../components/PortfolioText'));
-//   return (
-//     <>
-//       <Suspense fallback={<span>loading...</span>}>
-//         <Component />
-//       </Suspense>
-//     </>
-//   );
-// };
-
 const IndexPage = ({ data }) => (
   <Layout>
     <Hero fluid={data.hero.edges[0].node.fluid}>

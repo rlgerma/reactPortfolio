@@ -16,17 +16,17 @@ const IconWrapper = styled.div`
   margin: 0 auto;
   svg {
     color: white;
-    width: 1em;
-    height: 1em;
+    width: 2em;
+    height: 2em;
     padding: 1.5em;
   }
 `;
 
 function Social(props) {
   const { edges } = props;
-  const linkedin = edges.find((o) => o.node.type === 'linkedin');
-  const github = edges.find((o) => o.node.type === 'github');
-  const mail = edges.find((o) => o.node.type === 'mail');
+  const linkedin = edges.find(o => o.node.type === 'linkedin');
+  const github = edges.find(o => o.node.type === 'github');
+  const mail = edges.find(o => o.node.type === 'mail');
 
   return (
     <IconWrapper>
