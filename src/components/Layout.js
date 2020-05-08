@@ -115,7 +115,7 @@ const Layout = ({ children, noMenu }) => (
                 LinkedIn
               </Link>{' '}
               {'-'} <Link to="https://github.com/rlgerma92">GitHub</Link> {'-'}
-              <Link to="https://twitter.com/rickygermaine">Twitter</Link>
+              <Link to="https://twitter.com/rickygermaine"> Twitter</Link>
               <br />
               <br />
               rgermaine.com
