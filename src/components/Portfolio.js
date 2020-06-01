@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Card,
+  CardFooter,
   CardImg,
   CardBody,
   CardTitle,
@@ -22,10 +23,12 @@ function Portfolio(props) {
             <CardTitle className="title">{item.title}</CardTitle>
             <CardSubtitle className="subTitle">{item.tech}</CardSubtitle>
             <CardText className="bodyCopy">{item.about}</CardText>
-            <a href={item.url}>
-              <Button>View</Button>
-            </a>
           </CardBody>
+          <a href={item.url}>
+            <CardFooter>
+              <Button>View</Button>
+            </CardFooter>
+          </a>
         </Card>
       ))}
     </>
