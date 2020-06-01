@@ -23,7 +23,7 @@
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591044095/Screen_Shot_2020-06-01_at_2.41.22_PM_q1xtru.jpg",
     "title": "Rgermaine Books",
-    "tech": "React/Express/Node.js/mongodb",
+    "tech": "React/Express/Node.js/MongoDB",
     "about": "A CRUD PWA that stores books to read on Mongo DB",
     "url": "https://github.com/rlgerma92/rgermainebooks"
   },
@@ -65,7 +65,7 @@
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1585961986/05-rec-port_gzjqce.jpg",
     "title": "Reverse Engineer Code",
-    "tech": "Blog post",
+    "tech": "Adobe Creative Cloud/Blog post",
     "about": "An article I wrote about deconstructing the various files in modern MVC frameworks",
     "url": "https://spark.adobe.com/page/Pkquz58VaeU0F/"
   },
