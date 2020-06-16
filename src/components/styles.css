@@ -2,7 +2,7 @@
 
 .card {
   width: 40%;
-  height: 35rem;
+  height: 40em;
   margin: 1em 5%;
   float: left;
   transition: 0.2s ease all;
@@ -17,37 +17,43 @@
   transform: scale(1.1);
 }
 
-.title.card-title {
+.card-body .card-title {
   font-family: raleway, sans-serif;
   font-weight: 900;
   font-style: normal;
-  color: #001100;
-  font-size: 1.5em;
+  color: #000;
+  font-size: 2em;
   text-transform: capitalize;
 }
 
-.card .subTitle {
+.card-subtitle {
   font-family: raleway, sans-serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
-.card .bodyCopy {
+p.card-text {
   font-family: raleway, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: normal;
-  font-size: 1em;
+  font-size: 1.2em;
+  margin: 0 auto 1em;
+  padding: 0.5em 1em 2em;
 }
 
 .card button {
-  position: fixed bottom;
-  width: 8em;
+  position: bottom;
+  width: 10em;
   font-family: raleway, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1em;
+  font-size: 1.3em;
+}
+
+.card-footer {
+  margin: 1em auto 0;
 }
 
 @media (max-width: 1024px) {
@@ -58,7 +64,7 @@
     float: center;
   }
 
-  .title.card-title {
+  .card-body .card-title {
     font-family: raleway, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -67,14 +73,14 @@
     text-transform: capitalize;
   }
 
-  .card .subTitle {
+  .card-subtitle {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: italic;
     font-size: 1em;
   }
 
-  .card .bodyCopy {
+  p.card-text {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -82,7 +88,7 @@
     font-size: 1em;
   }
 
-  .card button {
+  button.card {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -98,7 +104,7 @@
     float: center;
   }
 
-  .title.card-title {
+  .card-body .card-title {
     font-family: raleway, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -107,14 +113,14 @@
     text-transform: capitalize;
   }
 
-  .card .subTitle {
+  .card-subtitle {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: italic;
     font-size: 1em;
   }
 
-  .card .bodyCopy {
+  p.card-text {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -122,7 +128,7 @@
     font-size: 1em;
   }
 
-  .card button {
+  button.card {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: normal;

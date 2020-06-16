@@ -20,9 +20,9 @@ function Portfolio(props) {
         <Card key={item.id}>
           <CardImg src={item.image} alt={item.title} />
           <CardBody>
-            <CardTitle className="title">{item.title}</CardTitle>
-            <CardSubtitle className="subTitle">{item.tech}</CardSubtitle>
-            <CardText className="bodyCopy">{item.about}</CardText>
+            <CardTitle>{item.title}</CardTitle>
+            <CardSubtitle>{item.tech}</CardSubtitle>
+            <CardText>{item.about}</CardText>
           </CardBody>
           <a href={item.url}>
             <CardFooter>

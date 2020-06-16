@@ -10,7 +10,6 @@
     "bootstrap": "4.4.1",
     "classnames": "^2.2.6",
     "eslint-plugin-react-hooks": "^2.4.0",
-    "formik": "^1.5.8",
     "gatsby": "^2.0.64",
     "gatsby-cli": "^2.12.40",
     "gatsby-image": "^2.0.15",
@@ -30,8 +29,6 @@
     "radium": "0.26.0",
     "react": "^16.5.1",
     "react-animate-on-scroll": "^2.1.5",
-    "react-collapsible": "^2.7.0",
-    "react-coverflow": "0.2.20",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-typist": "^2.0.4",
@@ -48,8 +45,7 @@
     "typeface-pacifico": "^0.0.54",
     "typeface-raleway": "^0.0.54",
     "typescript": "^3.8.2",
-    "webpack": "^4.41.6",
-    "yup": "0.28.3"
+    "webpack": "4.43.0"
   },
   "keywords": [
     "gatsby"
