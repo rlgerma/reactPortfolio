@@ -9,8 +9,8 @@ import {
   CardText,
   Button,
 } from 'reactstrap';
+import Link from './Link';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
 
 function Portfolio(props) {
   const { edges } = props;
@@ -24,11 +24,11 @@ function Portfolio(props) {
             <CardSubtitle>{item.tech}</CardSubtitle>
             <CardText>{item.about}</CardText>
           </CardBody>
-          <a href={item.url}>
+          <Link to={item.url}>
             <CardFooter>
               <Button>View</Button>
             </CardFooter>
-          </a>
+          </Link>
         </Card>
       ))}
     </>

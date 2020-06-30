@@ -1,0 +1,23 @@
+[
+  {
+    "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1586323615/jfnmusic_iga0wb.jpg",
+    "title": "Joyful Noise Music",
+    "tech": "GatsbyJS/Netlify",
+    "about": "A business website made for a music school & store in Brighton, CO.",
+    "url": "https://joyfulnoisemusic.org/"
+  },
+  {
+    "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1586323938/cbd-landing_ktiacf.jpg",
+    "title": "CBDistillery Landing Page",
+    "tech": "Gatsby/React/Netlify/Bootstrap",
+    "about": "A landing page I made for CBDistillery meant to link to external e-commerce site.",
+    "url": "https://silly-dubinsky-dbe3af.netlify.com/"
+  },
+  {
+    "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591044483/Screen_Shot_2020-06-01_at_2.43.14_PM_ct5bs3.jpg",
+    "title": "BOTA Skin Care Guide",
+    "tech": "jQuery/Bootstrap/Wordpress",
+    "about": "A Skin care guide for customers who want information about products from BOTA",
+    "url": "https://www.botaskin.com/natural-cbd-skin-care/"
+  }
+]

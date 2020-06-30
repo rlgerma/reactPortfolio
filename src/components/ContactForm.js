@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Pattern from '../images/move.gif';
 import ScrollAnimation from 'react-animate-on-scroll';
+import Pattern from '../assets/images/move.gif';
 import 'animate.css/animate.min.css';
 
 const Form = styled.form``;
@@ -131,11 +131,10 @@ const ModalOverlay = styled.div`
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
 `;
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+const encode = data =>
+  Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&');
-};
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -197,7 +196,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={2}
           animateIn="bounceInLeft"
-          animateOnce={true}
+          animateOnce
           initiallyVisible={false}
         >
           <Name
@@ -214,7 +213,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={3}
           animateIn="bounceInRight"
-          animateOnce={true}
+          animateOnce
           initiallyVisible={false}
         >
           <Email
@@ -231,7 +230,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={3}
           animateIn="bounceInUp"
-          animateOnce={true}
+          animateOnce
           initiallyVisible={false}
         >
           <Message
@@ -248,7 +247,7 @@ class ContactForm extends React.Component {
         <ScrollAnimation
           duration={3}
           animateIn="bounceInUp"
-          animateOnce={true}
+          animateOnce
           initiallyVisible={false}
         >
           <Submit

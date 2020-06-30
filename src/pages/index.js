@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { Flex, Box } from 'rebass';
+import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+import classnames from 'classnames';
 import ScrollAnimation from 'react-animate-on-scroll';
 import Technologies from '../components/Technologies';
 import ContactForm from '../components/ContactForm';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import HeroText from '../components/HeroText';
-import Social from '../components/Social';
 import Portfolio from '../components/Portfolio';
 import 'animate.css/animate.min.css';
 
@@ -43,128 +44,201 @@ const SectionTitle = styled.h2`
   `}
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <Hero fluid={data.hero.edges[0].node.fluid}>
-      <HeroText />
-      <Social edges={data.allSocialJson.edges} />
-    </Hero>
-    <Section id="about-me">
-      <ScrollAnimation
-        animateIn="bounceInDown"
-        animateOnce={true}
-        initiallyVisible={false}
-      >
-        <h1>About Me</h1>
-      </ScrollAnimation>
-      <Flex alignItems="center" flexDirection="column">
-        <Box px={2} width={[1, 1 / 2]}>
-          <ScrollAnimation
-            animateIn="fadeIn"
-            animateOnce={true}
-            delay={1000}
-            initiallyVisible={false}
-          >
-            <h3>
-              My name is
-              <br /> <strong>Richard Germaine</strong>.
-            </h3>
-            <h4>I'm a Web Developer from Denver.</h4>
-          </ScrollAnimation>
-          <ScrollAnimation
-            delay={2000}
-            animateIn="fadeIn"
-            animateOnce={true}
-            initiallyVisible={false}
-          >
-            <h4>Whether you need minor styling on your page,</h4>
-          </ScrollAnimation>
-          <ScrollAnimation
-            delay={3000}
-            animateIn="fadeIn"
-            animateOnce={true}
-            initiallyVisible={false}
-          >
-            <h4>or a fully functional web app,</h4>
-          </ScrollAnimation>
-          <ScrollAnimation
-            delay={4000}
-            animateIn="fadeIn"
-            animateOnce={true}
-            initiallyVisible={false}
-          >
-            <h4>
-              I can help you with your project using modern developing
-              technologies and design.
-            </h4>
-          </ScrollAnimation>
-        </Box>
-      </Flex>
-    </Section>
-    <Section id="portfolio" dark>
-      <ScrollAnimation
-        duration={2}
-        animateIn="bounceInLeft"
-        animateOnce={true}
-        offset={200}
-        initiallyVisible={false}
-      >
-        <SectionTitle>My Work</SectionTitle>
-        <Portfolio edges={data.allPortfolioJson.edges} />
-      </ScrollAnimation>
-    </Section>
-    <Section id="technologies">
-      <SectionTitle>
+const IndexPage = ({ data }) => {
+  const [activeTab, setActiveTab] = useState('2');
+
+  const toggle = tab => {
+    if (activeTab !== tab) setActiveTab(tab);
+  };
+  return (
+    <Layout>
+      <Hero fluid={data.hero.edges[0].node.fluid}>
+        <HeroText />
+      </Hero>
+
+      <Section id="about-me">
         <ScrollAnimation
           animateIn="bounceInDown"
-          animateOnce={true}
+          animateOnce
+          initiallyVisible={false}
+        >
+          <h1>About Me</h1>
+        </ScrollAnimation>
+        <Flex alignItems="center" flexDirection="column">
+          <Box px={2} width={[1, 1 / 2]}>
+            <ScrollAnimation
+              animateIn="fadeIn"
+              animateOnce
+              delay={1000}
+              initiallyVisible={false}
+            >
+              <h3>
+                My name is
+                <br /> <strong>Richard Germaine</strong>.
+              </h3>
+              <h4>I'm a Web Developer from Denver.</h4>
+            </ScrollAnimation>
+            <ScrollAnimation
+              delay={2000}
+              animateIn="fadeIn"
+              animateOnce
+              initiallyVisible={false}
+            >
+              <h4>Whether you need minor styling on your page,</h4>
+            </ScrollAnimation>
+            <ScrollAnimation
+              delay={3000}
+              animateIn="fadeIn"
+              animateOnce
+              initiallyVisible={false}
+            >
+              <h4>or a fully functional web app,</h4>
+            </ScrollAnimation>
+            <ScrollAnimation
+              delay={4000}
+              animateIn="fadeIn"
+              animateOnce
+              initiallyVisible={false}
+            >
+              <h4>
+                I can help you with your project using modern developing
+                technologies and design.
+              </h4>
+            </ScrollAnimation>
+          </Box>
+        </Flex>
+      </Section>
+      <Section id="portfolio" dark>
+        <ScrollAnimation
+          animateIn="fadeIn"
+          animateOnce
+          delay={1000}
+          initiallyVisible={false}
+        >
+          <SectionTitle>My Work</SectionTitle>
+        </ScrollAnimation>
+        <ScrollAnimation
+          duration={2}
+          animateIn="bounceInUp"
+          animateOnce
           offset={200}
           initiallyVisible={false}
         >
-          Technologies
+          <Nav tabs>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === '1' })}
+                onClick={() => {
+                  toggle('1');
+                }}
+              >
+                Client Work
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === '2' })}
+                onClick={() => {
+                  toggle('2');
+                }}
+              >
+                Web Apps
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === '3' })}
+                onClick={() => {
+                  toggle('3');
+                }}
+              >
+                Mobile Apps
+              </NavLink>
+            </NavItem>
+          </Nav>
         </ScrollAnimation>
-      </SectionTitle>
-      <ScrollAnimation
-        animateIn="bounceInUp"
-        animateOnce={true}
-        offset={200}
-        initiallyVisible={false}
-      >
-        <Technologies edges={data.allLogos.edges} />
-      </ScrollAnimation>
-    </Section>
-    <Section id="contact" dark>
-      <SectionTitle>
+        <TabContent activeTab={activeTab}>
+          <TabPane tabId="1">
+            <ScrollAnimation
+              duration={2}
+              animateIn="bounceInLeft"
+              animateOnce
+              offset={100}
+              initiallyVisible={false}
+            >
+              <Portfolio edges={data.allClientJson.edges} />
+            </ScrollAnimation>
+          </TabPane>
+          <TabPane tabId="2">
+            <ScrollAnimation
+              duration={2}
+              animateIn="bounceInUp"
+              animateOnce
+              offset={100}
+              initiallyVisible={false}
+            >
+              <Portfolio edges={data.allPortfolioJson.edges} />
+            </ScrollAnimation>
+          </TabPane>
+          <TabPane tabId="3">
+            <ScrollAnimation
+              duration={2}
+              animateIn="bounceInRight"
+              animateOnce
+              offset={100}
+              initiallyVisible={false}
+            >
+              <Portfolio edges={data.allMobileJson.edges} />
+            </ScrollAnimation>
+          </TabPane>
+        </TabContent>
+      </Section>
+
+      <Section id="technologies">
+        <SectionTitle>
+          <ScrollAnimation
+            animateIn="bounceInDown"
+            animateOnce
+            offset={200}
+            initiallyVisible={false}
+          >
+            Technologies
+          </ScrollAnimation>
+        </SectionTitle>
         <ScrollAnimation
-          duration={1}
-          animateIn="bounceInDown"
-          animateOnce={true}
+          animateIn="bounceInUp"
+          animateOnce
+          offset={200}
           initiallyVisible={false}
         >
-          Contact Me
+          <Technologies edges={data.allLogos.edges} />
         </ScrollAnimation>
-      </SectionTitle>
-      <Flex alignItems="center" flexDirection="column">
-        <Box px={2} width={[1, 1 / 2]}>
-          <ContactForm />
-        </Box>
-      </Flex>
-    </Section>
-  </Layout>
-);
+      </Section>
+      <Section id="contact" dark>
+        <SectionTitle>
+          <ScrollAnimation
+            duration={1}
+            animateIn="bounceInDown"
+            animateOnce
+            initiallyVisible={false}
+          >
+            Contact Me
+          </ScrollAnimation>
+        </SectionTitle>
+        <Flex alignItems="center" flexDirection="column">
+          <Box px={2} width={[1, 1 / 2]}>
+            <ContactForm />
+          </Box>
+        </Flex>
+      </Section>
+    </Layout>
+  );
+};
 
 export default IndexPage;
 
 export const pageQuery = graphql`
   query indexQuery {
-    allSocialJson {
-      edges {
-        node {
-          url
-          type
-        }
-      }
-    }
     allPortfolioJson {
       edges {
         node {
@@ -174,6 +248,31 @@ export const pageQuery = graphql`
           title
           url
           tech
+        }
+      }
+    }
+    allMobileJson {
+      edges {
+        node {
+          about
+          image
+          id
+          title
+          tech
+          url
+        }
+      }
+    }
+
+    allClientJson {
+      edges {
+        node {
+          about
+          image
+          id
+          title
+          tech
+          url
         }
       }
     }

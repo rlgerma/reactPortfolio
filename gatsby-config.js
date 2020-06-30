@@ -3,6 +3,17 @@ module.exports = {
     title: 'Richard Germaine Official Website',
   },
   plugins: [
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        // Override the file regex for SASS
+        sassRuleTest: /\.global\.s(a|c)ss$/,
+        // Override the file regex for CSS modules
+        sassRuleModulesTest: /\.mod\.s(a|c)ss$/,
+        useResolveUrlLoader: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -15,21 +26,21 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'portfolio',
-        path: `${__dirname}/src/images/portfolio`,
+        path: `${__dirname}/src/assets/images/portfolio`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'logos',
-        path: `${__dirname}/src/images/logos`,
+        path: `${__dirname}/src/assets/images/logos`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     'gatsby-transformer-sharp',
@@ -44,7 +55,7 @@ module.exports = {
         background_color: '#037F8C',
         theme_color: '#037F8C',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png',
+        icon: 'src/assets/images/favicon.png',
       },
     },
     'gatsby-plugin-styled-components',

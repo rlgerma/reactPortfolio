@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import Pattern from '../images/move.gif'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import Pattern from '../assets/images/move.gif';
 
 const Base = styled.a`
   font-size: 20pt;
@@ -39,10 +39,10 @@ const Base = styled.a`
     css`
       font-size: 2em;
     `}
-`
+`;
 
 function Name() {
-  return <Base href="/">Richard Germaine</Base>
+  return <Base href="/">Richard Germaine</Base>;
 }
 
-export default Name
+export default Name;
