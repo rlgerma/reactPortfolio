@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Richard Germaine Official Website',
+    title: 'Richard Germaine || Full Stack Developer from Denver, CO',
+    description: 'Full Stack Developer from Denver, CO',
+    author: 'Richard Germaine',
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -14,6 +16,13 @@ module.exports = {
         useResolveUrlLoader: true,
       },
     },
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -22,13 +31,7 @@ module.exports = {
         path: `${__dirname}/data`,
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'portfolio',
-        path: `${__dirname}/src/assets/images/portfolio`,
-      },
-    },
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -55,10 +58,9 @@ module.exports = {
         background_color: '#037F8C',
         theme_color: '#037F8C',
         display: 'minimal-ui',
-        icon: 'src/assets/images/favicon.png',
+        icon: 'src/assets/images/favicon.ico',
       },
     },
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-netlify',
       options: {

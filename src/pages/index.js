@@ -11,7 +11,6 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import HeroText from '../components/HeroText';
 import Portfolio from '../components/Portfolio';
-import 'animate.css/animate.min.css';
 
 import media from '../utils/style';
 
@@ -55,7 +54,7 @@ const IndexPage = ({ data }) => {
       <Hero fluid={data.hero.edges[0].node.fluid}>
         <HeroText />
       </Hero>
-
+      {/* <MyComponent /> */}
       <Section id="about-me">
         <ScrollAnimation
           animateIn="bounceInDown"

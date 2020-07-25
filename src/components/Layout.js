@@ -79,6 +79,8 @@ const Layout = ({ children, noMenu }) => (
         site {
           siteMetadata {
             title
+            description
+            author
           }
         }
         allMenuJson {
@@ -100,7 +102,12 @@ const Layout = ({ children, noMenu }) => (
             <html lang="en" />
             <meta
               name="description"
-              content="Richard Germaine - Full Stack Developer from Denver, Co"
+              content="Full Stack Developer from Denver, CO"
+            />
+            <meta name="author" content="Richard Germaine" />
+            <meta
+              name="keywords"
+              content="React,Full Stack,Developer,Richard Germaine, JavaScript"
             />
           </Helmet>
           <Navbar menu={data.allMenuJson.edges} noMenu={noMenu} />
@@ -114,7 +121,7 @@ const Layout = ({ children, noMenu }) => (
               <Link to="https://www.linkedin.com/in/richard-germaine-04261318b/">
                 LinkedIn
               </Link>{' '}
-              {'-'} <Link to="https://github.com/rlgerma92">GitHub</Link> {'-'}
+              {'-'} <Link to="https://github.com/rlgerma92">GitHub</Link> -
               <Link to="https://twitter.com/rickygermaine"> Twitter</Link>
               <br />
               <br />
