@@ -17,12 +17,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        printRejected: true,
-      },
-    },
+
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
