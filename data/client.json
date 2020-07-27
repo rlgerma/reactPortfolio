@@ -19,5 +19,12 @@
     "tech": "jQuery/Bootstrap/Wordpress",
     "about": "A Skin care guide for customers who want information about products from BOTA",
     "url": "https://www.botaskin.com/natural-cbd-skin-care/"
+  },
+  {
+    "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1595888893/Screen_Shot_2020-07-27_at_4.25.45_PM_leesus.jpg",
+    "title": "Double or Nothing",
+    "tech": "Gatsby/React/Netlify/Tachyons",
+    "about": "An rss blog for a podcast show",
+    "url": "https://doubleornothing.show/"
   }
 ]
