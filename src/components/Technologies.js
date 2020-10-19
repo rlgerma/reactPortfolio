@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import media from '../utils/style';
 
 const Wrapper = styled.div`
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
 
   ${media.xs`
@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const Item = styled.div`
   padding: 1.5em;
+
   ${media.xs`
     padding:1em;
   `}

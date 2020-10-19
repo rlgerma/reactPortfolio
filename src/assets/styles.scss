@@ -5,16 +5,11 @@
     margin: 2em auto 0;
   }
 }
-
-#portfolio
-  > div.tab-content
-  > div.tab-pane.active
-  > div
-  > div:nth-child(1)
-  > a
-  > div
-  > button {
-  color: pink;
+ div > h5{
+  font-size: 1.2em;
+  padding: .3em 1em;
+  line-height: 3vh;
+  margin: auto;
 }
 
 ul {

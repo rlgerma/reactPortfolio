@@ -12684,7 +12684,7 @@ react-typist@^2.0.4:
   dependencies:
     prop-types "^15.5.10"
 
-react@^16.5.1, react@^16.8.0:
+react@^16.8.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -12830,11 +12830,6 @@ redent@^1.0.0:
   dependencies:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
-
-reducer@^0.19.2:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/reducer/-/reducer-0.19.2.tgz#8e140234070c118e016067107b5551bdc1c58e7b"
-  integrity sha1-jhQCNAcMEY4BYGcQe1VRvcHFjns=
 
 redux-thunk@^2.3.0:
   version "2.3.0"
@@ -14711,11 +14706,6 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three@0.118.3:
-  version "0.118.3"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.118.3.tgz#c0bf8c10a68155478f12f4ccac2ff979526a4a0a"
-  integrity sha512-ijECXrNzDkHieoeh2H69kgawTGH8DiamhR4uBN8jEM7VHSKvfTdEvOoHsA8Aq7dh7PHAxhlqBsN5arBI3KixSw==
-
 through2@^2.0.0, through2@^2.0.1:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
@@ -15421,11 +15411,6 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
-
-vanta@^0.5.16:
-  version "0.5.16"
-  resolved "https://registry.yarnpkg.com/vanta/-/vanta-0.5.16.tgz#aec2190da7aa1beb8496d493382bdc4b3a1adbfa"
-  integrity sha512-UxZKC0BqsWeW62agLwJFqogYPFblHMBXCIU6dVqjMUfbhH3ZQ+9nLh5SCXuSL8bm0fdzvnors5/sarSsJsqxzw==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"

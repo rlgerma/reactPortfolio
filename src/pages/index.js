@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
           animateOnce
           initiallyVisible={false}
         >
-          <h1>About Me</h1>
+          <h2>About Me</h2>
         </ScrollAnimation>
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
@@ -71,11 +71,11 @@ const IndexPage = ({ data }) => {
               delay={1000}
               initiallyVisible={false}
             >
-              <h3>
+              <h4>
                 My name is
                 <br /> <strong>Richard Germaine</strong>.
-              </h3>
-              <h4>I'm a Web Developer from Denver.</h4>
+              </h4>
+              <h5>I'm a Developer from Denver.</h5>
             </ScrollAnimation>
             <ScrollAnimation
               delay={2000}
@@ -83,7 +83,7 @@ const IndexPage = ({ data }) => {
               animateOnce
               initiallyVisible={false}
             >
-              <h4>Whether you need minor styling on your page,</h4>
+              <h5>Whether you need minor styling on a web page,</h5>
             </ScrollAnimation>
             <ScrollAnimation
               delay={3000}
@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
               animateOnce
               initiallyVisible={false}
             >
-              <h4>or a fully functional web app,</h4>
+              <h5>or the next breakout app,</h5>
             </ScrollAnimation>
             <ScrollAnimation
               delay={4000}
@@ -99,10 +99,10 @@ const IndexPage = ({ data }) => {
               animateOnce
               initiallyVisible={false}
             >
-              <h4>
+              <h5>
                 I can help you with your project using modern developing
                 technologies and design.
-              </h4>
+              </h5>
             </ScrollAnimation>
           </Box>
         </Flex>
@@ -297,7 +297,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          fixed(height: 80, grayscale: false) {
+          fixed(height: 90, grayscale: false) {
             ...GatsbyImageSharpFixed_tracedSVG
           }
         }
