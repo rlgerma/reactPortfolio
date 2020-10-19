@@ -61,7 +61,8 @@ const IndexPage = ({ data }) => {
           animateOnce
           initiallyVisible={false}
         >
-          <h1>About Me</h1>
+          <SectionTitle>About Me</SectionTitle>
+          <br />
         </ScrollAnimation>
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>

@@ -1,5 +1,11 @@
 @import url('https://use.typekit.net/ost1kus.css');
 @import '../../node_modules/animate.css/animate.min.css';
+
+@font-face {
+  font-family: 'Name';
+  src: url('./lm.ttf') format('truetype');
+}
+
 #portfolio {
   div.tab-content {
     margin: 2em auto 0;
@@ -67,17 +73,12 @@ ul {
   height: 40em;
   margin: 1em 5%;
   float: left;
-  transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  box-shadow: 0px 1px 16px 8px rgba(0, 22, 0, 0.39),
-    0px 0px 2px 0px rgba(255, 255, 255, 0.3);
-
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
-    cursor: pointer;
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transform: scale(1.01);
   }
 
   button {
@@ -87,8 +88,13 @@ ul {
     font-weight: 400;
     font-style: normal;
     font-size: 1.3em;
-    box-shadow: inset 0px 3px 12px 6px rgba(0, 22, 0, 0.25),
-      0px 0px 2px 0px rgba(255, 255, 255, 0.3);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 1px;
+    background-color: #037f8c;
+    &:hover{
+      background-color: #006b77;
+    }
   }
 
   .card-body {
