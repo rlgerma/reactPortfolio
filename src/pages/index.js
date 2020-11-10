@@ -36,6 +36,8 @@ const Section = styled.div`
 
 const SectionTitle = styled.h2`
   font-size: 2em;
+  font-family: 'Name';
+  font-weight: 700;
   margin: 0.67em 0;
   align-content: left;
   ${media.xs`
