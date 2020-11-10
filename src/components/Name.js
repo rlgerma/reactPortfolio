@@ -1,27 +1,17 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Pattern from '../assets/images/move.gif';
 
 const Base = styled.a`
-  font-size: 20pt;
+  font-size: 1.5em;
   font-weight: 700;
   font-family: 'name';
   color: #fff;
-  margin: 20px 0;
+  margin: 5px 0;
   width: 100%;
   white-space: nowrap;
   transition-property: transform;
   transition-duration: 0.8s;
-  &:hover {
-    cursor: pointer;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-image: url(${Pattern}) ;
-    background-position: center;
-    background-repeat: repeat-x;
-    text-decoration: none;
-    -webkit-transform:rotate(354deg);
-  }
+
   ${props =>
     props.dark &&
     css`
@@ -45,7 +35,7 @@ const Base = styled.a`
 `;
 
 function Name() {
-  return <Base href="/">Richard Germaine</Base>;
+  return <Base href="/">R G</Base>;
 }
 
 export default Name;

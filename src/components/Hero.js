@@ -1,54 +1,41 @@
-import React from 'react';
-import Image from 'gatsby-image';
+import React, { useState, useEffect, useRef } from 'react';
+import GLOBE from 'vanta/dist/vanta.globe.min';
 import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
   position: relative;
-  align-items: center;
-`;
-
-const Overlay = styled.div`
-  width: 80%;
-  text-align: center;
-  margin: 0px auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-`;
-
-const BgImage = styled(Image)`
-  position: absolute;
-  top: 0;
-  left: 0;
+  max-width: 2000px;
+  max-height: 1100px;
   width: 100%;
-  z-index: -1;
-  height: ${(props) => props.height || '100vh'};
-
-  // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
-  & > img {
-    object-fit: ${(props) => props.fit || 'cover'} !important;
-    object-position: ${(props) => props.position || '50% 50%'} !important;
-    font-family: 'object-fit: ${(props) => props.fit || 'cover'} !important; object-position: ${(
-  props,
-) => props.position || '50% 50%'} !important;'
-  }
 `;
 
-function Hero(props) {
-  const { children, fluid } = props;
-  return (
-    <Container>
-      <BgImage fluid={fluid} />
-      <Overlay>{children}</Overlay>
-    </Container>
-  );
-}
+const Hero = props => {
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const bgRef = useRef(null);
+  const { children } = props;
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        GLOBE({
+          el: bgRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 400.0,
+          minWidth: 400.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x037f8c,
+          backgroundColor: 0x141018,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
+  return <Container ref={bgRef}>{children}</Container>;
+};
 
 export default Hero;

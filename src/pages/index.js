@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { Flex, Box } from 'rebass';
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
-import classnames from 'classnames';
 import ScrollAnimation from 'react-animate-on-scroll';
 import Technologies from '../components/Technologies';
 import ContactForm from '../components/ContactForm';
@@ -11,7 +9,7 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import HeroText from '../components/HeroText';
 import Portfolio from '../components/Portfolio';
-
+import { Button } from 'antd';
 import media from '../utils/style';
 
 const Section = styled.div`
@@ -21,7 +19,7 @@ const Section = styled.div`
   ${props =>
     props.dark &&
     css`
-      background: #292929;
+      background: #141018;
       h2 {
         color: #fff;
       }
@@ -36,9 +34,9 @@ const Section = styled.div`
 
 const SectionTitle = styled.h2`
   font-size: 2em;
-  font-family: 'Name';
+  font-family: 'name';
   font-weight: 700;
-  margin: 0.67em 0;
+  margin: 2em 0;
   align-content: left;
   ${media.xs`
     font-size:1.5em;
@@ -46,17 +44,16 @@ const SectionTitle = styled.h2`
 `;
 
 const IndexPage = ({ data }) => {
-  const [activeTab, setActiveTab] = useState('2');
-
-  const toggle = tab => {
-    if (activeTab !== tab) setActiveTab(tab);
-  };
+  const [portView, setPortView] = useState(data.allPortfolioJson.edges);
+  const [portClass, setPortClass] = useState(
+    'animate__animated animate__fadeInUp'
+  );
   return (
     <Layout>
-      <Hero fluid={data.hero.edges[0].node.fluid}>
+      <Hero>
         <HeroText />
       </Hero>
-      {/* <MyComponent /> */}
+
       <Section id="about-me">
         <ScrollAnimation
           animateIn="bounceInDown"
@@ -64,7 +61,6 @@ const IndexPage = ({ data }) => {
           initiallyVisible={false}
         >
           <SectionTitle>About Me</SectionTitle>
-          <br />
         </ScrollAnimation>
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
@@ -75,33 +71,14 @@ const IndexPage = ({ data }) => {
               initiallyVisible={false}
             >
               <h4>
-                My name is
-                <br /> <strong>Richard Germaine</strong>.
+                My name is <strong>Richard Germaine</strong>.
               </h4>
               <h5>I'm a Developer from Denver.</h5>
-            </ScrollAnimation>
-            <ScrollAnimation
-              delay={2000}
-              animateIn="fadeIn"
-              animateOnce
-              initiallyVisible={false}
-            >
+
               <h5>Whether you need minor styling on a web page,</h5>
-            </ScrollAnimation>
-            <ScrollAnimation
-              delay={3000}
-              animateIn="fadeIn"
-              animateOnce
-              initiallyVisible={false}
-            >
+
               <h5>or the next breakout app,</h5>
-            </ScrollAnimation>
-            <ScrollAnimation
-              delay={4000}
-              animateIn="fadeIn"
-              animateOnce
-              initiallyVisible={false}
-            >
+
               <h5>
                 I can help you with your project using modern developing
                 technologies and design.
@@ -114,7 +91,7 @@ const IndexPage = ({ data }) => {
         <ScrollAnimation
           animateIn="fadeIn"
           animateOnce
-          delay={1000}
+          offset={200}
           initiallyVisible={false}
         >
           <SectionTitle>My Work</SectionTitle>
@@ -126,74 +103,40 @@ const IndexPage = ({ data }) => {
           offset={200}
           initiallyVisible={false}
         >
-          <Nav tabs>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: activeTab === '1' })}
-                onClick={() => {
-                  toggle('1');
-                }}
-              >
-                Client Work
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: activeTab === '2' })}
-                onClick={() => {
-                  toggle('2');
-                }}
-              >
-                Web Apps
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: activeTab === '3' })}
-                onClick={() => {
-                  toggle('3');
-                }}
-              >
-                Mobile Apps
-              </NavLink>
-            </NavItem>
-          </Nav>
+          <Button
+            className="port-btn"
+            onClick={() => {
+              setPortClass('animate__animated animate__fadeInLeft');
+              setPortView(data.allClientJson.edges);
+            }}
+          >
+            Client Work
+          </Button>
+
+          <Button
+            className="port-btn"
+            onClick={() => {
+              setPortClass('animate__animated animate__fadeInUp');
+              setPortView(data.allPortfolioJson.edges);
+            }}
+          >
+            Web Apps
+          </Button>
+
+          <Button
+            className="port-btn"
+            onClick={() => {
+              setPortClass('animate__animated animate__fadeInRight');
+              setPortView(data.allMobileJson.edges);
+            }}
+          >
+            Mobile Apps
+          </Button>
         </ScrollAnimation>
-        <TabContent activeTab={activeTab}>
-          <TabPane tabId="1">
-            <ScrollAnimation
-              duration={2}
-              animateIn="bounceInLeft"
-              animateOnce
-              offset={100}
-              initiallyVisible={false}
-            >
-              <Portfolio edges={data.allClientJson.edges} />
-            </ScrollAnimation>
-          </TabPane>
-          <TabPane tabId="2">
-            <ScrollAnimation
-              duration={2}
-              animateIn="bounceInUp"
-              animateOnce
-              offset={100}
-              initiallyVisible={false}
-            >
-              <Portfolio edges={data.allPortfolioJson.edges} />
-            </ScrollAnimation>
-          </TabPane>
-          <TabPane tabId="3">
-            <ScrollAnimation
-              duration={2}
-              animateIn="bounceInRight"
-              animateOnce
-              offset={100}
-              initiallyVisible={false}
-            >
-              <Portfolio edges={data.allMobileJson.edges} />
-            </ScrollAnimation>
-          </TabPane>
-        </TabContent>
+
+        <div className={portClass}>
+          <Portfolio edges={portView} />
+        </div>
       </Section>
 
       <Section id="technologies">

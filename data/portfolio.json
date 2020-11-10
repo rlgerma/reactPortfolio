@@ -3,7 +3,7 @@
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591043653/Screen_Shot_2020-06-01_at_2.33.44_PM_s5pwgk.jpg",
     "title": "BootSpace",
     "tech": "React/Ant-Design/Firebase",
-    "about": "A social app that takes authorized github profile data, pushes in to cloud storage, then retrieves it to build your profile page on BootSpace",
+    "about": "A social app that takes authorized github profile data and builds your profile page on BootSpace. Data is saved in Firebase, and you can log in & out of your account.",
     "url": "https://bootspacetwo.firebaseapp.com/"
   },
 
@@ -11,28 +11,28 @@
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,f_auto,h_400,w_800/v1585961986/01-bt-port_kbbfoe.jpg",
     "title": "Budget Tracker",
     "tech": "GatsbyJS/Netlify/Auth0/MongoDB",
-    "about": "A PWA that takes in user data and stashes it locally till a connection to a secure database is made",
+    "about": "A PWA that takes in user data and stashes it locally till a connection to a secure database is made. Auth0 is used to log in & and out of your account.",
     "url": "https://github.com/rlgerma92/budgetTracker"
   },
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591044095/Screen_Shot_2020-06-01_at_2.41.22_PM_q1xtru.jpg",
     "title": "Rgermaine Books",
     "tech": "React/Express/Node.js/MongoDB",
-    "about": "A CRUD PWA that stores books to read on Mongo DB",
+    "about": "A CRUD PWA that stores a list of books to read. You can read, write, and delete your list from storage kept on MongoDB.",
     "url": "https://github.com/rlgerma92/rgermainebooks"
   },
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1585961986/02-dl-port_jykq0f.jpg",
     "title": "Deedlist",
     "tech": "GatsbyJS/Netlify/Heroku/MySQL",
-    "about": "A Craigslist like web app I contributed to that stores/searches 'needs' or 'deeds' for people that need help",
+    "about": "A Craigslist like web app I contributed to that stores/searches 'needs' or 'deeds' for people that need help.",
     "url": "https://newdeedlist.netlify.app/"
   },
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1585961986/03-wt-port_wvdi4f.jpg",
     "title": "Workout Tracker",
     "tech": "Express/GraphJs/MongoDB/Bootstrap",
-    "about": "A web app that takes in user exercise data and returns it in a cool graph!",
+    "about": "A web app that helps users track their workout progress. Charts are also used for data visualization of users timeline",
     "url": "https://github.com/rlgerma92/workoutTracker"
   },
 
@@ -40,7 +40,7 @@
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1585961986/04-n-port_ydte3o.jpg",
     "title": "Note Taker",
     "tech": "Express/Node.js/Bootstrap",
-    "about": "An online note taking tool that creates, saves, and deletes your personalized notes.No sign up required!",
+    "about": "An online note taking tool that creates, saves, and deletes your personalized notes. No sign up required!",
     "url": "https://agile-taiga-39753.herokuapp.com/"
   },
   {
@@ -61,7 +61,7 @@
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591044489/Screen_Shot_2020-06-01_at_2.45.49_PM_d5aeca.jpg",
     "title": "JS Password Generator",
     "tech": "JavaScript/HTML-CSS",
-    "about": "My first app! A password generator that runs on a series of questions.",
+    "about": "My first app! A password generator that runs on a series of questions. More of a milestone to see how far I've come.",
     "url": "https://rlgerma92.github.io/JsPasswordGen/"
   }
 ]

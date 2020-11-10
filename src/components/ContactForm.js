@@ -9,7 +9,8 @@ const Form = styled.form``;
 const Name = styled.input`
   border: 0;
   padding: 10px;
-  color: #333;
+  color: #fff;
+  background-color: #434343;
   border: solid 1px #ccc;
   margin: 0 0 20px;
   border-radius: 6px;
@@ -20,7 +21,8 @@ const Name = styled.input`
 const Email = styled.input`
   border: 0;
   padding: 10px;
-  color: #333;
+  color: #fff;
+  background-color: #434343;
   border: solid 1px #ccc;
   margin: 0 0 20px;
   border-radius: 6px;
@@ -31,7 +33,8 @@ const Email = styled.input`
 const Message = styled.textarea`
   border: 0;
   padding: 10px;
-  color: #333;
+  color: #fff;
+  background-color: #434343;
   border: solid 1px #ccc;
   margin: 0 0 20px;
   border-radius: 6px;
@@ -44,24 +47,21 @@ const Submit = styled.input`
   padding: 15px 30px;
   margin: 0 0 20px;
   text-transform: uppercase;
-  font-weight: bold;
-  color: #333;
+  font-family: 'Raleway';
+  font-weight: 300;
   cursor: pointer;
   border-radius: 0;
-  background-color: #fff;
+  color: #fff;
+  background-color: #434343;
   transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
   -o-transition: 0.2s ease all;
   &:hover {
     cursor: pointer;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    background-image: url(${Pattern});
+    color: #02808c;
     background-color: #fff;
     text-decoration: none;
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 `;
 
@@ -69,25 +69,22 @@ const ModalButton = styled.button`
   border: solid 1px #ccc;
   padding: 15px 30px;
   text-transform: uppercase;
-  font-weight: bold;
-  color: #333;
+  font-family: 'Raleway';
+  font-weight: 300;
   cursor: pointer;
   border-radius: 0;
-  background-color: #fff;
+  color: #fff;
+  background-color: #434343;
   margin: 0 auto;
   transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
   -o-transition: 0.2s ease all;
   &:hover {
-    border: solid 1px ghostwhite;
     cursor: pointer;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    background-image: url(${Pattern});
+    color: #02808c;
+    background-color: #fff;
     text-decoration: none;
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 `;
 
@@ -110,9 +107,8 @@ const Modal = styled.div`
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
   p {
     line-height: 1.6;
-    font-family: raleway, sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    font-family: 'Raleway';
+    font-weight: 300;
     font-size: 1.5em;
     color: #001100;
     margin: 1em auto;
@@ -260,10 +256,10 @@ class ContactForm extends React.Component {
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
 
         <Modal visible={showModal}>
-          <p>Thanks for reaching out!</p>
+          <p>Thanks for reaching out</p>
           <p>I'll get back to you shortly.</p>
-          <p>-Richard </p>
-          <ModalButton onClick={this.closeModal}>Okay</ModalButton>
+          <p>- R </p>
+          <ModalButton onClick={this.closeModal}>Tight</ModalButton>
         </Modal>
       </Form>
     );

@@ -1,28 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import Typist from 'react-typist'
-
-import media from '../utils/style'
-
-const StyledTypist = styled(Typist)`
+import React from 'react';
+import styled from 'styled-components';
+import media from '../utils/style';
+const StyledTypist = styled.div`
   color: #fff;
-  letter-spacing: 17px;
-  margin: 0 auto;
-  font-size: 72px;
-  line-height: 80px;
+  letter-spacing: 1rem;
+  margin: 25% auto 10%;
+  font-size: 3em;
+  line-height: 5vh;
   font-weight: 400;
   text-transform: uppercase;
   text-shadow: 1px 1px #037f8c;
-  font-family: 'Raleway';
+  font-family: 'Name';
   ${media.xs`
     font-size:38px;
     line-height: 44px;
     letter-spacing: 8px;
   `}
-`
+`;
 
 function HeroText(props) {
-  const { text } = props
+  const { text } = props;
   if (text) {
     return (
       <StyledTypist cursor={{ show: false }}>
@@ -33,26 +30,13 @@ function HeroText(props) {
           .slice(1)
           .join(' ')}
       </StyledTypist>
-    )
+    );
   }
   return (
-    <StyledTypist cursor={{ show: false }}>
-      <strong key={1}>Let's Make</strong> Web Apps
-      <Typist.Backspace count={19} delay={1000} />
-      <span key={2}> Beautiful Pages</span>
-      <Typist.Backspace count={19} delay={1000} />
-      <span key={2}>But Most Importantly</span>
-      <Typist.Backspace count={29} delay={1000} />
-      <Typist.Delay ms={300} />
-      <span key={5}>.</span>
-      <Typist.Delay ms={600} />
-      <span key={6}>.</span>
-      <Typist.Delay ms={900} />
-      <span key={7}>.</span>
-      <Typist.Backspace count={25} delay={10} />
-      <strong key={8}>Let's Make Connections</strong>
+    <StyledTypist>
+      <strong>Let's Make Connections</strong>
     </StyledTypist>
-  )
+  );
 }
 
-export default HeroText
+export default HeroText;

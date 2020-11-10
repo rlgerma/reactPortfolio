@@ -5,7 +5,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import styledNormalize from 'styled-normalize';
 import Link from './Link';
-import 'typeface-pacifico';
 import 'typeface-raleway';
 import 'typeface-open-sans';
 
