@@ -14,8 +14,8 @@ import media from '../utils/style';
 
 const Section = styled.div`
   text-align: center;
-  padding-top: 45px;
-  padding-bottom: 40px;
+  padding: 0.5em 0.5em 2em;
+
   ${props =>
     props.dark &&
     css`
@@ -29,7 +29,7 @@ const Section = styled.div`
       div {
         color: #979797;
       }
-    `}
+    `};
 `;
 
 const SectionTitle = styled.h2`
@@ -71,17 +71,13 @@ const IndexPage = ({ data }) => {
               initiallyVisible={false}
             >
               <h4>
-                My name is <strong>Richard Germaine</strong>.
+                My name is <br />
+                <strong>Richard Germaine</strong>.
               </h4>
-              <h5>I'm a Developer from Denver.</h5>
-
-              <h5>Whether you need minor styling on a web page,</h5>
-
-              <h5>or the next breakout app,</h5>
-
               <h5>
-                I can help you with your project using modern developing
-                technologies and design.
+                I'm a Developer from Denver. Whether you need minor styling on a
+                web page, or the next breakout app, I can help you with your
+                project using modern developing technologies and design.
               </h5>
             </ScrollAnimation>
           </Box>

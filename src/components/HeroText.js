@@ -12,9 +12,11 @@ const StyledTypist = styled.div`
   text-shadow: 1px 1px #037f8c;
   font-family: 'Name';
   ${media.xs`
-    font-size:38px;
+    font-size:32px;
     line-height: 44px;
     letter-spacing: 8px;
+    margin: 70% auto auto;
+    text-align:center;
   `}
 `;
 
