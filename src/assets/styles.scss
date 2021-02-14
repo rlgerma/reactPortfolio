@@ -86,8 +86,22 @@ div.ant-card-body > div > div {
 #about-me > div.animated.bounceInDown > h2 {
   margin: 1% auto 2%;
 }
+@media (min-width: 768px) {
+  .ant-col-md-12 {
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 5% 0%;
+  }
+}
 @media (max-width: 500px) {
   #about-me > div.animated.bounceInDown > h2 {
-    margin: 35% auto 10%;
+    margin: 10% auto;
+  }
+  .ant-col-xs-24 {
+    display: block;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 10% 0;
   }
 }
