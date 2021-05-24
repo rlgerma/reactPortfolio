@@ -1,6 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import media from '../utils/style';
+import React from "react";
+import styled from "styled-components";
+import media from "../utils/style";
+
 const StyledTypist = styled.div`
   color: #343a3f;
   letter-spacing: 1rem;
@@ -9,7 +10,7 @@ const StyledTypist = styled.div`
   font-weight: 400;
   text-transform: uppercase;
   text-shadow: 1px 1px #f3f6f9;
-  font-family: 'Name';
+  font-family: "Name";
   top: 2.50125rem;
 
   ${media.xs`
@@ -26,12 +27,12 @@ function HeroText(props) {
   if (text) {
     return (
       <StyledTypist cursor={{ show: false }}>
-        <strong>{text.split(' ').slice(0, 1)}</strong>
+        <strong>{text.split(" ").slice(0, 1)}</strong>
         <br />
         {text
-          .split(' ')
+          .split(" ")
           .slice(1)
-          .join(' ')}
+          .join(" ")}
       </StyledTypist>
     );
   }

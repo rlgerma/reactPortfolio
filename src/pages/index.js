@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { graphql } from 'gatsby';
-import styled, { css } from 'styled-components';
-import { Flex, Box } from 'rebass';
-import ScrollAnimation from 'react-animate-on-scroll';
-import Technologies from '../components/Technologies';
-import ContactForm from '../components/ContactForm';
-import Hero from '../components/Hero';
-import Layout from '../components/Layout';
-import HeroText from '../components/HeroText';
-import Portfolio from '../components/Portfolio';
-import { Button, Row, Col } from 'antd';
-import media from '../utils/style';
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import styled, { css } from "styled-components";
+import { Flex, Box } from "rebass";
+import ScrollAnimation from "react-animate-on-scroll";
+import Technologies from "../components/Technologies";
+import ContactForm from "../components/ContactForm";
+import Hero from "../components/Hero";
+import Layout from "../components/Layout";
+import HeroText from "../components/HeroText";
+import Portfolio from "../components/Portfolio";
+import { Button, Row, Col } from "antd";
+import media from "../utils/style";
 
 const Section = styled.div`
   text-align: center;
   padding: 0.5em 0.5em 2em;
 
-  ${props =>
+  ${(props) =>
     props.dark &&
     css`
       background: #141018;
@@ -34,7 +34,7 @@ const Section = styled.div`
 
 const SectionTitle = styled.h2`
   font-size: 2em;
-  font-family: 'name';
+  font-family: "name";
   font-weight: 700;
   margin: 2em 0;
   align-content: left;
@@ -46,7 +46,7 @@ const SectionTitle = styled.h2`
 const IndexPage = ({ data }) => {
   const [portView, setPortView] = useState(data.allPortfolioJson.edges);
   const [portClass, setPortClass] = useState(
-    'animate__animated animate__fadeInUp'
+    "animate__animated animate__fadeInUp"
   );
   return (
     <Layout>
@@ -54,9 +54,9 @@ const IndexPage = ({ data }) => {
         <HeroText />
       </Hero>
 
-      <Section id="about-me">
+      <Section id='about-me'>
         <ScrollAnimation
-          animateIn="bounceInDown"
+          animateIn='fadeInDown'
           animateOnce
           initiallyVisible={false}
         >
@@ -64,40 +64,40 @@ const IndexPage = ({ data }) => {
         </ScrollAnimation>
 
         <ScrollAnimation
-          animateIn="fadeIn"
+          animateIn='fadeIn'
           animateOnce
           delay={1000}
           initiallyVisible={false}
         >
-          <h5 style={{ fontSize: '1.0125rem', textAlign: 'center' }}>
+          <h5 style={{ fontSize: "1.0125rem", textAlign: "center" }}>
             <Row gutter={16}>
-              <Col lg={16} sm={24} style={{ margin: '.3rem auto' }}>
-                My name is{' '}
-                <span style={{ fontWeight: '600' }}>Richard Germaine</span> and
+              <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
+                My name is{" "}
+                <span style={{ fontWeight: "600" }}>Richard Germaine</span> and
                 I'm a Developer from Denver.
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col lg={16} sm={24} style={{ margin: '.3rem auto' }}>
+              <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
                 Whether you need minor styling on a web page,
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col lg={16} sm={24} style={{ margin: '.3rem auto' }}>
+              <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
                 or the next breakout app, I can help you with your project
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col lg={16} sm={20} style={{ margin: '.3rem auto' }}>
+              <Col lg={16} sm={20} style={{ margin: ".3rem auto" }}>
                 using modern developing technologies and design.
               </Col>
             </Row>
           </h5>
         </ScrollAnimation>
       </Section>
-      <Section id="portfolio" dark>
+      <Section id='portfolio' dark>
         <ScrollAnimation
-          animateIn="fadeIn"
+          animateIn='fadeIn'
           animateOnce
           offset={200}
           initiallyVisible={false}
@@ -106,15 +106,15 @@ const IndexPage = ({ data }) => {
         </ScrollAnimation>
         <ScrollAnimation
           duration={2}
-          animateIn="bounceInUp"
+          animateIn='fadeIn'
           animateOnce
           offset={200}
           initiallyVisible={false}
         >
           <Button
-            className="port-btn"
+            className='port-btn'
             onClick={() => {
-              setPortClass('animate__animated animate__fadeInLeft');
+              setPortClass("animate__animated animate__fadeInLeft");
               setPortView(data.allClientJson.edges);
             }}
           >
@@ -122,9 +122,9 @@ const IndexPage = ({ data }) => {
           </Button>
 
           <Button
-            className="port-btn"
+            className='port-btn'
             onClick={() => {
-              setPortClass('animate__animated animate__fadeInUp');
+              setPortClass("animate__animated animate__fadeInUp");
               setPortView(data.allPortfolioJson.edges);
             }}
           >
@@ -132,9 +132,9 @@ const IndexPage = ({ data }) => {
           </Button>
 
           <Button
-            className="port-btn"
+            className='port-btn'
             onClick={() => {
-              setPortClass('animate__animated animate__fadeInRight');
+              setPortClass("animate__animated animate__fadeInRight");
               setPortView(data.allMobileJson.edges);
             }}
           >
@@ -147,10 +147,10 @@ const IndexPage = ({ data }) => {
         </div>
       </Section>
 
-      <Section id="technologies">
+      <Section id='technologies'>
         <SectionTitle>
           <ScrollAnimation
-            animateIn="bounceInDown"
+            animateIn='fadeInDown'
             animateOnce
             offset={200}
             initiallyVisible={false}
@@ -159,7 +159,7 @@ const IndexPage = ({ data }) => {
           </ScrollAnimation>
         </SectionTitle>
         <ScrollAnimation
-          animateIn="bounceInUp"
+          animateIn='fadeInUp'
           animateOnce
           offset={200}
           initiallyVisible={false}
@@ -167,18 +167,18 @@ const IndexPage = ({ data }) => {
           <Technologies edges={data.allLogos.edges} />
         </ScrollAnimation>
       </Section>
-      <Section id="contact" dark>
+      <Section id='contact' dark>
         <SectionTitle>
           <ScrollAnimation
             duration={1}
-            animateIn="bounceInDown"
+            animateIn='FadeInDown'
             animateOnce
             initiallyVisible={false}
           >
             Contact Me
           </ScrollAnimation>
         </SectionTitle>
-        <Flex alignItems="center" flexDirection="column">
+        <Flex alignItems='center' flexDirection='column'>
           <Box px={2} width={[1, 1 / 2]}>
             <ContactForm />
           </Box>

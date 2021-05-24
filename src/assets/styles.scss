@@ -1,10 +1,10 @@
-@import url('https://use.typekit.net/ost1kus.css');
-@import '~animate.css/animate.min.css';
-@import '~antd/dist/antd.css';
+@import url("https://use.typekit.net/ost1kus.css");
+@import "~animate.css/animate.min.css";
+@import "~antd/dist/antd.css";
 
 @font-face {
-  font-family: 'Name';
-  src: url('./lm.ttf') format('truetype');
+  font-family: "Name";
+  src: url("./lm.ttf") format("truetype");
 }
 
 .card-case {
@@ -13,13 +13,15 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background-color: transparent;
 
   .card-deck {
     width: 100%;
     height: 100%;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
 
     .card-before {
       position: absolute;
@@ -46,8 +48,8 @@
   background-color: transparent;
   border-color: transparent;
   color: #fff;
-  font-size: 1.3em;
-  font-family: 'Raleway';
+  font-size: 1.5rem;
+  font-family: "Raleway";
   font-weight: 600;
   text-transform: uppercase;
   transition: 0.3s ease all;
@@ -60,12 +62,25 @@
     border-color: transparent;
   }
 }
-
+#portfolio
+  > div.animate__animated.animate__fadeInUp
+  > div
+  > div
+  > div
+  > div
+  > div.card-before
+  > div
+  > div.ant-card-body {
+  background-color: transparent;
+}
+.ant-card {
+  background: transparent !important;
+}
 div.ant-card-cover > div > div.ant-card-head > div {
   div.ant-card-head-title {
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     font-weight: 300;
     font-size: 1.2em;
     letter-spacing: 0.11vw;
@@ -86,22 +101,43 @@ div.ant-card-body > div > div {
 #about-me > div.animated.bounceInDown > h2 {
   margin: 1% auto 2%;
 }
-@media (min-width: 768px) {
-  .ant-col-md-12 {
+@media (min-width: 767px) {
+  .ant-col-8 {
     display: block;
     flex: 0 0 50%;
     max-width: 50%;
     margin: 5% 0%;
+  }
+  .ant-btn.port-btn {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 500px) {
   #about-me > div.animated.bounceInDown > h2 {
     margin: 10% auto;
   }
-  .ant-col-xs-24 {
+  .ant-col-8 {
     display: block;
     flex: 0 0 100%;
     max-width: 100%;
     margin: 10% 0;
+  }
+  #portfolio
+    > div.animate__animated.animate__fadeInUp
+    > div
+    > div
+    > div
+    > div
+    > div.card-before
+    > div
+    > div.ant-card-body {
+    background-color: transparent;
+    h5 {
+      display: none;
+    }
+  }
+  .ant-btn.port-btn {
+    font-size: 1rem;
+    margin: 0.5em 0 1em;
   }
 }
