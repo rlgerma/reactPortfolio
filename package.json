@@ -6,7 +6,7 @@
   "dependencies": {
     "@types/react": "^16.9.22",
     "animate.css": "^3.7.2",
-    "antd": "^4.8.2",
+    "antd": "^4.15.6",
     "babel-plugin-styled-components": "^1.9.2",
     "eslint-plugin-react-hooks": "^2.4.0",
     "gatsby": "^2.0.64",
