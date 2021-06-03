@@ -38,7 +38,7 @@
     "styled-reset": "^1.6.1",
     "typeface-open-sans": "^0.0.54",
     "typeface-raleway": "^1.1.13",
-    "typescript": "^3.8.2",
+    "typescript": "^4.3.2",
     "vanta": "^0.5.21"
   },
   "keywords": [
