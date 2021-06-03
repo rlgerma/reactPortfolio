@@ -16,12 +16,12 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-netlify": "^2.0.6",
-    "gatsby-plugin-offline": "^2.0.11",
+    "gatsby-plugin-offline": "^3.10.2",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "2.3.6",
     "gatsby-plugin-sharp": "^2.0.7",
     "gatsby-plugin-styled-components": "^3.0.4",
-    "gatsby-source-filesystem": "^2.0.11",
+    "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-sharp": "^2.12.1",
     "node-sass": "^4.14.1",
@@ -38,7 +38,7 @@
     "styled-reset": "^1.6.1",
     "typeface-open-sans": "^0.0.54",
     "typeface-raleway": "^1.1.13",
-    "typescript": "^3.8.2",
+    "typescript": "^4.3.2",
     "vanta": "^0.5.21"
   },
   "keywords": [
