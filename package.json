@@ -3,6 +3,7 @@
   "description": "Richard Germaine",
   "version": "1.0.0",
   "author": "Richard Germaine ",
+  "engine": { "node": ">=12.13.0"},
   "dependencies": {
     "@types/react": "^17.0.6",
     "animate.css": "^4.1.1",
