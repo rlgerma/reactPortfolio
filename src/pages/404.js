@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
@@ -11,7 +10,7 @@ const StyledHero = styled(Hero)`
 
 const NotFoundPage = ({ data }) => (
   <Layout noMenu>
-    <StyledHero fluid={data.hero?.edges?.[0].node?.fluid ?? null}>
+    <StyledHero>
       <HeroText text='404 Not Found' />
     </StyledHero>
   </Layout>
