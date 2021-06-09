@@ -941,7 +941,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
   integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
@@ -6642,12 +6642,12 @@ gatsby-graphiql-explorer@^0.11.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-image@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-3.6.0.tgz#8bca9ac0c61290c0a1acf90eb6fe93576e45368b"
-  integrity sha512-1Hh4VWmNBAig3WOwNKwgkmXxg2SYPbGZ11qJBzGp0igfQsBnNw1XkmfDwACfhIbxRSKSaN6gbgQgOOpQau4NtA==
+gatsby-image@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-3.7.0.tgz#b098454283f2f5017571aff0ea148c59566ec717"
+  integrity sha512-2jc7pc53hd/7aOxI4QWkbIzKkVhQWre/3m3L3lvhPApIyFUjuKD0Vfh6bovGBTP6qfY30+hBxlg1yfUy79SnLQ==
   dependencies:
-    "@babel/runtime" "^7.12.5"
+    "@babel/runtime" "^7.14.0"
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
@@ -12261,10 +12261,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
-react-spring@^9.2.1:
-  version "9.2.1"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-9.2.1.tgz#999ff52142fbf85180b79b3b7b9266e0d3539f8d"
-  integrity sha512-HLkEbuRvRtvAwkeqqwZXIEaKPPc17ViI5DYPtYTpgu2H9jmndm/kp1BfxRwpu5+m4ecGzUUX7RRNWEfwWY6oWA==
+react-spring@^9.2.2:
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-9.2.2.tgz#315bf14202a3d0d68b2652ba571a91b71e05be8b"
+  integrity sha512-tYlW4Qmfph8mS18HBTFu7QOX/TCXr6cf+BnHcHnMMB9BVPtAZ7UOTGTHyxbnmkMMMKdeP4QwGqffWfTo3BFvWg==
   dependencies:
     "@react-spring/core" "~9.2.0"
     "@react-spring/konva" "~9.2.0"
@@ -14473,10 +14473,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-open-sans@^0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.54.tgz#20f5b5ea5c7f95d89dc1f8b2d2b1457680129cee"
-  integrity sha512-w6wOd6EicZdZKf0jSU/K3EzEi3zFgvWQSN7NOpRIQI5KeMWmC5Pg/lqtBVJHB0pRChYRmLdhf4h8ROur0A3JZQ==
+typeface-open-sans@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-1.1.13.tgz#32a09ebd7df59601e01ad81216f98ce641eeafd1"
+  integrity sha512-lVGVHvYl7UJDFB9vN8r7NHw3sVm7Rjeow6b9AeABc/J+2mDaCkmcdVtw3QZnsJW39P+xm5zeggIj9gLHYGn9Iw==
 
 typeface-raleway@^1.1.13:
   version "1.1.13"
