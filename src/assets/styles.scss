@@ -119,7 +119,7 @@ div.ant-card-body > div > div {
     display: block;
     flex: 0 0 100%;
     max-width: 100%;
-    margin: 10% 0;
+    margin: 20% 0 !important;
   }
   #portfolio
     > div.animate__animated.animate__fadeInUp
@@ -131,9 +131,6 @@ div.ant-card-body > div > div {
     > div
     > div.ant-card-body {
     background-color: transparent;
-    h5 {
-      display: none;
-    }
   }
   .ant-btn.port-btn {
     font-size: 1rem;
