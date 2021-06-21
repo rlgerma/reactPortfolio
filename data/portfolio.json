@@ -12,14 +12,14 @@
     "title": "Budget Tracker",
     "tech": "Gatsby | Netlify | Auth0 | MongoDB",
     "about": "A PWA that takes in user data and stashes it locally till a connection to a secure database is made. Auth0 is used to log in & and out of your account.",
-    "url": "https://github.com/rlgerma92/budgetTracker"
+    "url": "https://github.com/rlgerma/budgetTracker"
   },
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591044095/Screen_Shot_2020-06-01_at_2.41.22_PM_q1xtru.jpg",
     "title": "Rgermaine Books",
     "tech": "React | Express | Node.js | MongoDB",
     "about": "A CRUD PWA that stores a list of books to read. You can read, write, and delete your list from storage kept on MongoDB.",
-    "url": "https://github.com/rlgerma92/rgermainebooks"
+    "url": "https://github.com/rlgerma/rgermainebooks"
   },
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,e_auto_color,h_400,w_800/v1585961986/02-dl-port_jykq0f.jpg",
@@ -33,7 +33,7 @@
     "title": "Workout Tracker",
     "tech": "Express | GraphJs | MongoDB | Bootstrap",
     "about": "A web app that helps users track their workout progress. Charts are also used for data visualization of users timeline",
-    "url": "https://github.com/rlgerma92/workoutTracker"
+    "url": "https://github.com/rlgerma/workoutTracker"
   },
 
   {
@@ -55,13 +55,13 @@
     "title": "Foodle",
     "tech": "Bootstrap | External API calls",
     "about": "A meal recipe search engine I co-engineered with some former classmates at University of Denver. Now deprecated.",
-    "url": "https://rlgerma92.github.io/Project-One/"
+    "url": "https://rlgerma.github.io/Project-One/"
   },
   {
     "image": "https://res.cloudinary.com/rgermaine-com/image/upload/c_scale,h_400,q_auto,w_800/v1591044489/Screen_Shot_2020-06-01_at_2.45.49_PM_d5aeca.jpg",
     "title": "JS Password Generator",
     "tech": "JavaScript/HTML-CSS",
     "about": "My first app! A password generator that runs on a series of questions. More of a milestone to see how far I've come.",
-    "url": "https://rlgerma92.github.io/JsPasswordGen/"
+    "url": "https://rlgerma.github.io/JsPasswordGen/"
   }
 ]

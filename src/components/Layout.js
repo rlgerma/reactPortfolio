@@ -1,14 +1,14 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
-import styled, { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
-import styledNormalize from 'styled-normalize';
-import Link from './Link';
-import 'typeface-raleway';
-import 'typeface-open-sans';
+import React from "react";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
+import styled, { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import styledNormalize from "styled-normalize";
+import Link from "./Link";
+import "typeface-raleway";
+import "typeface-open-sans";
 
-import Navbar from './Navbar';
+import Navbar from "./Navbar";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -95,20 +95,20 @@ const Layout = ({ children, noMenu }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <Body>
           <GlobalStyle />
           <Helmet title={data.site.siteMetadata.title}>
-            <html lang="en" />
+            <html lang='en' />
             <meta
-              name="description"
-              content="Full Stack Developer from Denver, CO"
+              name='description'
+              content='Full Stack Developer from Denver, CO'
             />
-            <meta name="author" content="Richard Germaine" />
+            <meta name='author' content='Richard Germaine' />
             <meta
-              name="keywords"
-              content="React,Full Stack,Developer,Richard Germaine, JavaScript"
+              name='keywords'
+              content='React,Full Stack,Developer,Richard Germaine, JavaScript'
             />
           </Helmet>
           <Navbar menu={data.allMenuJson.edges} noMenu={noMenu} />
@@ -119,11 +119,11 @@ const Layout = ({ children, noMenu }) => (
               <br />
               <br /> You can also find me on
               <br />
-              <Link to="https://www.linkedin.com/in/richard-germaine-04261318b/">
+              <Link to='https://www.linkedin.com/in/richard-germaine-04261318b/'>
                 LinkedIn
-              </Link>{' '}
-              {'-'} <Link to="https://github.com/rlgerma92">GitHub</Link> -
-              <Link to="https://twitter.com/rickygermaine"> Twitter</Link>
+              </Link>{" "}
+              {"-"} <Link to='https://github.com/rlgerma'>GitHub</Link> -
+              <Link to='https://twitter.com/rickygermaine'> Twitter</Link>
               <br />
               <br />
               rgermaine.com
