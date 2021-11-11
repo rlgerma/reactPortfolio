@@ -10,7 +10,7 @@
     "@types/react": "^17.0.34",
     "animate.css": "^4.1.1",
     "antd": "^4.16.13",
-    "babel-plugin-styled-components": "^1.13.2",
+    "babel-plugin-styled-components": "^1.13.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "gatsby": "^2.32.13",
     "gatsby-cli": "^4.1.2",
