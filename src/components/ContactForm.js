@@ -142,9 +142,9 @@ class ContactForm extends React.Component {
     };
   }
 
-  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
+  handleChange = (error) => this.setState({ [e.target.name]: e.target.value });
 
-  handleSubmit = (e) => {
+  handleSubmit = (error) => {
     this.setState({
       submitting: true,
     });
@@ -155,7 +155,7 @@ class ContactForm extends React.Component {
     })
       .then(this.handleSuccess)
       .catch((error) => alert(error));
-    e.preventDefault();
+    error.preventDefault();
   };
 
   handleSuccess = () => {
