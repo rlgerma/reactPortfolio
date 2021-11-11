@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Flex, Box } from 'rebass';
-import scrollToElement from 'scroll-to-element';
-import ButtonLink from './ButtonLink';
+import React from "react";
+import styled from "styled-components";
+import { Flex, Box } from "rebass";
+import scrollToElement from "scroll-to-element";
+import ButtonLink from "./ButtonLink";
 
-import Name from './Name';
+import Name from "./Name";
 
-import media from '../utils/style';
+import media from "../utils/style";
 
 const Base = styled.div`
   padding: 0;
@@ -39,7 +39,7 @@ const NameBox = styled(Box)`
 `;
 
 const MenuItem = styled(ButtonLink)`
-  font-family: 'Raleway';
+  font-family: "Raleway";
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
