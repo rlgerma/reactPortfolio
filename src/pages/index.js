@@ -45,36 +45,24 @@ const SectionTitle = styled.h2`
 
 const IndexPage = ({ data }) => {
   const [portView, setPortView] = useState(data.allPortfolioJson.edges);
-  const [portClass, setPortClass] = useState(
-    "animate__animated animate__fadeInUp"
-  );
+  const [portClass, setPortClass] = useState("animate__animated animate__fadeInUp");
   return (
     <Layout>
-      <Hero>
+      <Hero fluid={data.hero.edges[0].node.fluid}>
         <HeroText />
       </Hero>
 
       <Section id='about-me'>
-        <ScrollAnimation
-          animateIn='fadeInDown'
-          animateOnce
-          initiallyVisible={false}
-        >
+        <ScrollAnimation animateIn='fadeInDown' animateOnce initiallyVisible={false}>
           <SectionTitle>About Me</SectionTitle>
         </ScrollAnimation>
 
-        <ScrollAnimation
-          animateIn='fadeIn'
-          animateOnce
-          delay={1000}
-          initiallyVisible={false}
-        >
+        <ScrollAnimation animateIn='fadeIn' animateOnce delay={1000} initiallyVisible={false}>
           <h5 style={{ fontSize: "1.0125rem", textAlign: "center" }}>
             <Row gutter={16}>
               <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
-                My name is{" "}
-                <span style={{ fontWeight: "600" }}>Richard Germaine</span> and
-                I'm a Developer from Denver.
+                My name is <span style={{ fontWeight: "600" }}>Richard Germaine</span> and I'm a
+                Developer from Denver.
               </Col>
             </Row>
             <Row gutter={16}>
@@ -96,12 +84,7 @@ const IndexPage = ({ data }) => {
         </ScrollAnimation>
       </Section>
       <Section id='portfolio' dark>
-        <ScrollAnimation
-          animateIn='fadeIn'
-          animateOnce
-          offset={200}
-          initiallyVisible={false}
-        >
+        <ScrollAnimation animateIn='fadeIn' animateOnce offset={200} initiallyVisible={false}>
           <SectionTitle>My Work</SectionTitle>
         </ScrollAnimation>
         <ScrollAnimation
@@ -149,32 +132,17 @@ const IndexPage = ({ data }) => {
 
       <Section id='technologies'>
         <SectionTitle>
-          <ScrollAnimation
-            animateIn='fadeInDown'
-            animateOnce
-            offset={200}
-            initiallyVisible={false}
-          >
+          <ScrollAnimation animateIn='fadeInDown' animateOnce offset={200} initiallyVisible={false}>
             Technologies
           </ScrollAnimation>
         </SectionTitle>
-        <ScrollAnimation
-          animateIn='fadeInUp'
-          animateOnce
-          offset={200}
-          initiallyVisible={false}
-        >
+        <ScrollAnimation animateIn='fadeInUp' animateOnce offset={200} initiallyVisible={false}>
           <Technologies edges={data.allLogos.edges} />
         </ScrollAnimation>
       </Section>
       <Section id='contact' dark>
         <SectionTitle>
-          <ScrollAnimation
-            duration={1}
-            animateIn='FadeInDown'
-            animateOnce
-            initiallyVisible={false}
-          >
+          <ScrollAnimation duration={1} animateIn='FadeInDown' animateOnce initiallyVisible={false}>
             Contact Me
           </ScrollAnimation>
         </SectionTitle>
@@ -257,9 +225,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    hero: allImageSharp(
-      filter: { original: { src: { regex: "/background/" } } }
-    ) {
+    hero: allImageSharp(filter: { original: { src: { regex: "/background/" } } }) {
       edges {
         node {
           id

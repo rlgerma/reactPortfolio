@@ -1,73 +1,53 @@
-import React, { useState, useEffect, useRef } from "react";
-import BIRDS from "vanta/dist/vanta.birds.min";
-import CLOUDS from "vanta/dist/vanta.clouds.min";
+import React from "react";
+import Image from "gatsby-image";
 import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
   position: relative;
-  max-width: 2000px;
-  max-height: 1100px;
-  width: 100%;
+  align-items: center;
 `;
 
-const Hero = (props) => {
-  const [vantaEffect, setVantaEffect] = useState(0);
-  const [vantaEffectTwo, setVantaEffectTwo] = useState(0);
-  const bgRef = useRef(null);
-  const bgRefTwo = useRef(null);
-  const { children } = props;
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        BIRDS({
-          el: bgRef.current,
-          mouseControls: true,
-          touchControls: false,
-          gyroControls: true,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          backgroundColor: 0x60aee8,
-          backgroundAlpha: 0.0,
-          color1: 0xe870b1,
-          color2: 0xffde67,
-          colorMode: "variance",
-          birdSize: 1.7,
-          wingSpan: 20.0,
-          separation: 30.0,
-          alignment: 50.0,
-          cohesion: 35.0,
-          quantity: 4.0,
-        })
-      );
-      setVantaEffectTwo(
-        CLOUDS({
-          el: bgRefTwo.current,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          skyColor: 0x9ebce8,
-          cloudColor: 0xb9b3d4,
-          cloudShadowColor: 0xb15d3b,
-          sunGlareColor: 0x464646,
-          sunlightColor: 0x7e96c3,
-          speed: 1.3,
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect && vantaEffectTwo) {
-        vantaEffect.destroy();
-        vantaEffectTwo.destroy();
-      }
-    };
-  }, [vantaEffect, vantaEffectTwo]);
+const Overlay = styled.div`
+  width: 80%;
+  text-align: center;
+  margin: 0px auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
+const BgImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: ${(props) => props.height || "100vh"};
+  // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
+  & > img {
+    object-fit: ${(props) => props.fit || "cover"} !important;
+    object-position: ${(props) => props.position || "50% 50%"} !important;
+    font-family: "object-fit: ${(props) => props.fit || "cover"} !important; object-position: ${(
+      props
+    ) => props.position || "50% 50%"} !important;";
+  }
+`;
+
+function Hero(props) {
+  const { children, fluid } = props;
   return (
-    <div ref={bgRefTwo}>
-      <Container ref={bgRef}>{children}</Container>
-    </div>
+    <Container>
+      <BgImage fluid={fluid} />
+      <Overlay>{children}</Overlay>
+    </Container>
   );
-};
+}
 
 export default Hero;
