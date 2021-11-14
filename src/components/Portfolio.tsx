@@ -2,8 +2,24 @@ import React, { useState } from "react";
 import { useSpring, animated as a } from "react-spring";
 import { Card, Row, Col } from "antd";
 import Link from "./Link";
+import { FluidValue } from "@react-spring/shared";
 
-const FlipCard = (sporp) => {
+interface FlipCardProps {
+  front:
+    | string
+    | React.ReactElement<React.JSXElementConstructor<unknown>>
+    | React.ReactFragment
+    | React.ReactPortal
+    | FluidValue<React.ReactText | null>;
+  back:
+    | string
+    | React.ReactElement<React.JSXElementConstructor<unknown>>
+    | React.ReactFragment
+    | React.ReactPortal
+    | FluidValue<React.ReactText | null>;
+}
+
+const FlipCard = (sporp: FlipCardProps) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -12,17 +28,14 @@ const FlipCard = (sporp) => {
   });
   return (
     <div onClick={() => set((state) => !state)} className='card-deck'>
-      <a.div
-        className='card-before'
-        style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}
-      >
+      <a.div className='card-before' style={{ opacity: opacity.to((o) => 1 - o), transform }}>
         {sporp.front}
       </a.div>
       <a.div
         className='card-after'
         style={{
           opacity,
-          transform: transform.interpolate((t) => `${t} rotateX(180deg)`),
+          transform: transform.to((t) => `${t} rotateX(180deg)`),
         }}
       >
         {sporp.back}
@@ -31,7 +44,20 @@ const FlipCard = (sporp) => {
   );
 };
 
-const Portfolio = (props) => {
+export interface PortfolioProps {
+  edges: {
+    node: {
+      id: string;
+      title: string;
+      url: string;
+      tech: string;
+      about: string;
+      image: string;
+    };
+  }[];
+}
+
+const Portfolio = (props: PortfolioProps): JSX.Element => {
   const { edges } = props;
   const { Meta } = Card;
   return (

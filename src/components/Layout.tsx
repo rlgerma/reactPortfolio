@@ -5,6 +5,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import styledNormalize from "styled-normalize";
 import Link from "./Link";
+
 import "typeface-raleway";
 import "typeface-open-sans";
 
@@ -73,7 +74,12 @@ const FooterText = styled.div`
   padding: 3em;
 `;
 
-const Layout = ({ children, noMenu }) => (
+interface LayoutProps {
+  noMenu: boolean;
+  children: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined;
+}
+
+const Layout = (props: LayoutProps): JSX.Element => (
   <StaticQuery
     query={graphql`
       query layoutQuery {
@@ -101,18 +107,15 @@ const Layout = ({ children, noMenu }) => (
           <GlobalStyle />
           <Helmet title={data.site.siteMetadata.title}>
             <html lang='en' />
-            <meta
-              name='description'
-              content='Full Stack Developer from Denver, CO'
-            />
+            <meta name='description' content='Full Stack Developer from Denver, CO' />
             <meta name='author' content='Richard Germaine' />
             <meta
               name='keywords'
               content='React,Full Stack,Developer,Richard Germaine, JavaScript'
             />
           </Helmet>
-          <Navbar menu={data.allMenuJson.edges} noMenu={noMenu} />
-          {children}
+          <Navbar menu={data.allMenuJson.edges} noMenu={props.noMenu} />
+          {props.children}
           <Footer>
             <FooterText>
               Thanks for checking out my site

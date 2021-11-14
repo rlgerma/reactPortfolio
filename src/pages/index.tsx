@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { graphql } from "gatsby";
 import styled, { css } from "styled-components";
 import { Flex, Box } from "rebass";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -12,11 +11,15 @@ import Portfolio from "../components/Portfolio";
 import { Button, Row, Col } from "antd";
 import media from "../utils/style";
 
+import { PortfolioProps } from "../components/Portfolio";
+import { TechnologiesProps } from "../components/Technologies";
+import { graphql } from "gatsby";
+
 const Section = styled.div`
   text-align: center;
   padding: 0.5em 0.5em 2em;
 
-  ${(props) =>
+  ${(props: { dark: boolean; id: string }) =>
     props.dark &&
     css`
       background: #141018;
@@ -43,11 +46,23 @@ const SectionTitle = styled.h2`
   `}
 `;
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({
+  data,
+}: {
+  data: {
+    allPortfolioJson: PortfolioProps;
+    allClientJson: PortfolioProps;
+    allMobileJson: PortfolioProps;
+    allLogos: { edges: TechnologiesProps[] };
+    hero: {
+      edges: { node: { fluid: boolean } }[];
+    };
+  };
+}): JSX.Element => {
   const [portView, setPortView] = useState(data.allPortfolioJson.edges);
   const [portClass, setPortClass] = useState("animate__animated animate__fadeInUp");
   return (
-    <Layout>
+    <Layout noMenu={false}>
       <Hero fluid={data.hero.edges[0].node.fluid}>
         <HeroText />
       </Hero>
@@ -61,7 +76,7 @@ const IndexPage = ({ data }) => {
           <h5 style={{ fontSize: "1.0125rem", textAlign: "center" }}>
             <Row gutter={16}>
               <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
-                My name is <span style={{ fontWeight: "600" }}>Richard Germaine</span> and I'm a
+                My name is <span style={{ fontWeight: 600 }}>Richard Germaine</span> and Im a
                 Developer from Denver.
               </Col>
             </Row>
@@ -184,7 +199,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allClientJson {
       edges {
         node {
@@ -197,7 +211,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allPortfolio: allImageSharp(
       filter: { original: { src: { regex: "/port/" } } }
       sort: { fields: original___src }
@@ -211,7 +224,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allLogos: allImageSharp(
       filter: { original: { src: { regex: "/logo/" } } }
       sort: { fields: original___src }
