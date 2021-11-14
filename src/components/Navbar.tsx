@@ -57,36 +57,38 @@ const MenuItem = styled(ButtonLink)`
    `}
 `;
 
-function NavBar(props) {
-  const { noMenu, menu } = props;
-  return (
-    <Base>
-      <Flex>
-        <NameBox px={2} width={[1, 1 / 3, 2 / 6]}>
-          <Name />
-        </NameBox>
-        {!noMenu ? (
-          <MenuBox px={2} width={[0, 2 / 3, 4 / 6]}>
-            <ul>
-              {menu.map(({ node: item }) => (
-                <li key={item.id}>
-                  <MenuItem
-                    onClick={() => {
-                      scrollToElement(item.link);
-                    }}
-                    aria-label={item.title}
-                  >
-                    {item.title}
-                  </MenuItem>
-                </li>
-              ))}
-            </ul>
-          </MenuBox>
-        ) : (
-          <></>
-        )}
-      </Flex>
-    </Base>
-  );
+interface NavBarItemProps {
+  id: string;
+  link: string;
+  title: string;
 }
+
+const NavBar = (props: { noMenu: boolean; menu: { node: NavBarItemProps }[] }): JSX.Element => (
+  <Base>
+    <Flex>
+      <NameBox px={2} width={[1, 1 / 3, 2 / 6]}>
+        <Name />
+      </NameBox>
+      {!props.noMenu && (
+        <MenuBox px={2} width={[0, 2 / 3, 4 / 6]}>
+          <ul>
+            {props.menu.map(({ node: item }) => (
+              <li key={item.id}>
+                <MenuItem
+                  onClick={() => {
+                    scrollToElement(item.link);
+                  }}
+                  aria-label={item.title}
+                >
+                  {item.title}
+                </MenuItem>
+              </li>
+            ))}
+          </ul>
+        </MenuBox>
+      )}
+    </Flex>
+  </Base>
+);
+
 export default NavBar;

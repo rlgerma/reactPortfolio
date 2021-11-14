@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from "react";
 import styled from "styled-components";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -187,12 +189,7 @@ class ContactForm extends React.Component {
         <p hidden>
           Don’t fill this out: <input name='bot' onChange={this.handleChange} />
         </p>
-        <ScrollAnimation
-          duration={2}
-          animateIn='bounceInLeft'
-          animateOnce
-          initiallyVisible={false}
-        >
+        <ScrollAnimation duration={2} animateIn='bounceInLeft' animateOnce initiallyVisible={false}>
           <Name
             name='name'
             type='text'
@@ -221,12 +218,7 @@ class ContactForm extends React.Component {
             disabled={submitting}
           />
         </ScrollAnimation>
-        <ScrollAnimation
-          duration={3}
-          animateIn='bounceInUp'
-          animateOnce
-          initiallyVisible={false}
-        >
+        <ScrollAnimation duration={3} animateIn='bounceInUp' animateOnce initiallyVisible={false}>
           <Message
             name='message'
             title='Message'
@@ -238,12 +230,7 @@ class ContactForm extends React.Component {
             disabled={submitting}
           />
         </ScrollAnimation>
-        <ScrollAnimation
-          duration={3}
-          animateIn='bounceInUp'
-          animateOnce
-          initiallyVisible={false}
-        >
+        <ScrollAnimation duration={3} animateIn='bounceInUp' animateOnce initiallyVisible={false}>
           <Submit
             name='submit'
             type='submit'
@@ -255,8 +242,8 @@ class ContactForm extends React.Component {
 
         <Modal visible={showModal}>
           <p>Thanks for reaching out</p>
-          <p>I'll get back to you shortly.</p>
-          <p>- R </p>
+          <p>I will get back to you shortly.</p>
+          <p>- Richard </p>
           <ModalButton onClick={this.closeModal}>Tight</ModalButton>
         </Modal>
       </Form>

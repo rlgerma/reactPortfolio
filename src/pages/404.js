@@ -8,7 +8,7 @@ const StyledHero = styled(Hero)`
   margin-top: -52px;
 `;
 
-const NotFoundPage = ({ data }) => (
+const NotFoundPage = () => (
   <Layout noMenu>
     <StyledHero>
       <HeroText text='404 Not Found' />
