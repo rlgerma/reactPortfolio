@@ -144,7 +144,7 @@ class ContactForm extends React.Component {
     };
   }
 
-  handleChange = (error) => this.setState({ [e.target.name]: e.target.value });
+  handleChange = (error) => this.setState({ [error.target.name]: error.target.value });
 
   handleSubmit = (error) => {
     this.setState({
