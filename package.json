@@ -17,7 +17,7 @@
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby": "^2.32.13",
-    "gatsby-cli": "^4.2.0",
+    "gatsby-cli": "^4.3.0",
     "gatsby-image": "^3.11.0",
     "gatsby-link": "^2.3.2",
     "gatsby-plugin-eslint": "^2.0.8",
@@ -37,7 +37,7 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.5.1",
     "react-helmet": "^6.1.0",
-    "react-spring": "^9.3.1",
+    "react-spring": "^9.3.2",
     "react-typist": "^2.0.5",
     "rebass": "^4.0.7",
     "scroll-to-element": "^2.0.2",
@@ -63,7 +63,7 @@
     "@types/scroll-to-element": "^2.0.1",
     "@types/styled-components": "^5.1.15",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.26.1"
+    "eslint-plugin-react": "^7.27.1"
   },
   "eslintConfig": {
     "extends": [
