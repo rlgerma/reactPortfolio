@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
@@ -8,7 +8,7 @@ const StyledHero = styled(Hero)`
   margin-top: -52px;
 `;
 
-const NotFoundPage = () => (
+const NotFoundPage: FC = () => (
   <Layout noMenu>
     <StyledHero>
       <HeroText text='404 Not Found' />
