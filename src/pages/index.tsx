@@ -116,17 +116,7 @@ const IndexPage = ({
               setPortView(data.allClientJson.edges);
             }}
           >
-            Client Work
-          </Button>
-
-          <Button
-            className='port-btn'
-            onClick={() => {
-              setPortClass("animate__animated animate__fadeInUp");
-              setPortView(data.allPortfolioJson.edges);
-            }}
-          >
-            Web Apps
+            Web
           </Button>
 
           <Button
@@ -136,7 +126,7 @@ const IndexPage = ({
               setPortView(data.allMobileJson.edges);
             }}
           >
-            Mobile Apps
+            Mobile
           </Button>
         </ScrollAnimation>
 
