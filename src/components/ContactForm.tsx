@@ -1,4 +1,4 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import styled from "styled-components";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -102,8 +102,8 @@ const Modal = styled.div`
   flex-flow: column;
   align-items: flex-start;
   transition: 0.2s all;
-  opacity: ${(props) => (props.visible ? "1" : "0")};
-  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
+  opacity: ${(props: { visible: any }) => (props.visible ? "1" : "0")};
+  visibility: ${(props: { visible: any }) => (props.visible ? "visible" : "hidden")};
   p {
     line-height: 1.6;
     font-family: "Raleway";
@@ -122,17 +122,28 @@ const ModalOverlay = styled.div`
   position: fixed;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.3);
-  opacity: ${(props) => (props.visible ? "1" : "0")};
-  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
+  opacity: ${(props: { visible: any }) => (props.visible ? "1" : "0")};
+  visibility: ${(props: { visible: any }) => (props.visible ? "visible" : "hidden")};
 `;
 
-const encode = (data) =>
+const encode = (data: { [x: string]: string | number | boolean; "form-name"?: any }) =>
   Object.keys(data)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join("&");
 
-class ContactForm extends React.Component {
-  constructor(props) {
+class ContactForm extends React.Component<
+  Record<string, unknown>,
+  {
+    name: string;
+    email: string;
+    message: string;
+    showModal: boolean;
+    submitting: boolean;
+    [key: string]: any;
+  }
+> {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  constructor(props: any) {
     super(props);
     this.state = {
       name: "",
@@ -143,9 +154,10 @@ class ContactForm extends React.Component {
     };
   }
 
-  handleChange = (error) => this.setState({ [error.target.name]: error.target.value });
+  handleChange = (error: { target: { name: any; value: any } }): void =>
+    this.setState({ [error.target.name]: error.target.value });
 
-  handleSubmit = (error) => {
+  handleSubmit = (error: { preventDefault: () => void }): void => {
     this.setState({
       submitting: true,
     });
@@ -159,7 +171,7 @@ class ContactForm extends React.Component {
     error.preventDefault();
   };
 
-  handleSuccess = () => {
+  handleSuccess = (): void =>
     this.setState({
       name: "",
       email: "",
@@ -167,17 +179,81 @@ class ContactForm extends React.Component {
       showModal: true,
       submitting: false,
     });
-  };
 
-  closeModal = () => {
-    this.setState({ showModal: false });
-  };
+  closeModal = (): void => this.setState({ showModal: false });
 
-  render() {
+  render(): JSX.Element {
     const { name, email, message, showModal, submitting } = this.state;
     return (
       <Form
         name='contact'
+        onSubmit={this.handleSubmit}
+        data-netlify='true'
+        data-netlify-honeypot='bot'
+        onClick={this.closeModal}
+      >
+        <input type='hidden' name='form-name' value='contact' />
+        <p hidden>
+          Don’t fill this out: <input name='bot' onChange={this.handleChange} />
+        </p>
+        <ScrollAnimation duration={2} animateIn='bounceInLeft' animateOnce initiallyVisible={false}>
+          <Name
+            name='name'
+            type='text'
+            title='Name'
+            placeholder='Full Name'
+            value={name}
+            onChange={this.handleChange}
+            required
+            disabled={submitting}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation
+          duration={3}
+          animateIn='bounceInRight'
+          animateOnce
+          initiallyVisible={false}
+        >
+          <Email
+            name='email'
+            type='email'
+            title='Email'
+            placeholder='Email'
+            value={email}
+            onChange={this.handleChange}
+            required
+            disabled={submitting}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation duration={3} animateIn='bounceInUp' animateOnce initiallyVisible={false}>
+          <Message
+            name='message'
+            title='Message'
+            placeholder='Message'
+            value={message}
+            onChange={this.handleChange}
+            required
+            disabled={submitting}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation duration={3} animateIn='bounceInUp' animateOnce initiallyVisible={false}>
+          <Submit
+            name='submit'
+            type='submit'
+            value={submitting ? "Sending..." : "Send"}
+            disabled={submitting}
+          />
+        </ScrollAnimation>
+        <ModalOverlay onClick={this.closeModal} visible={showModal} />
+
+        <Modal visible={showModal}>
+          <p>Thanks for reaching out</p>
+          <p>I will get back to you shortly.</p>
+          <p>- Richard </p>
+          <ModalButton onClick={this.closeModal}>Tight</ModalButton>
+        </Modal>
+      </Form>
+    );
   }
 }
 
