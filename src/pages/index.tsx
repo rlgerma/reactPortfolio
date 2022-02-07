@@ -1,25 +1,25 @@
+import { Button, Col, Row } from "antd";
+import { graphql } from "gatsby";
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
-import { Flex, Box } from "rebass";
 import ScrollAnimation from "react-animate-on-scroll";
-import Technologies from "../components/Technologies";
+import { Box, Flex } from "rebass";
+import styled, { css } from "styled-components";
+
 import ContactForm from "../components/ContactForm";
 import Hero from "../components/Hero";
-import Layout from "../components/Layout";
 import HeroText from "../components/HeroText";
+import Layout from "../components/Layout";
 import Portfolio from "../components/Portfolio";
-import { Button, Row, Col } from "antd";
-import media from "../utils/style";
-
 import { PortfolioProps } from "../components/Portfolio";
+import Technologies from "../components/Technologies";
 import { TechnologiesProps } from "../components/Technologies";
-import { graphql } from "gatsby";
+import media from "../utils/style";
 
 const Section = styled.div`
   text-align: center;
   padding: 0.5em 0.5em 2em;
 
-  ${(props: { dark: boolean; id: string }) =>
+  ${(props: { dark: boolean }) =>
     props.dark &&
     css`
       background: #141018;
@@ -55,7 +55,7 @@ const IndexPage = ({
     allMobileJson: PortfolioProps;
     allLogos: { edges: TechnologiesProps[] };
     hero: {
-      edges: { node: { fluid: boolean } }[];
+      edges: { node: { fluid: never } }[];
     };
   };
 }): JSX.Element => {

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 import React from "react";
 import styled from "styled-components";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -179,75 +178,6 @@ class ContactForm extends React.Component {
     return (
       <Form
         name='contact'
-        onSubmit={this.handleSubmit}
-        data-netlify='true'
-        data-netlify-honeypot='bot'
-        overlay={showModal}
-        onClick={this.closeModal}
-      >
-        <input type='hidden' name='form-name' value='contact' />
-        <p hidden>
-          Don’t fill this out: <input name='bot' onChange={this.handleChange} />
-        </p>
-        <ScrollAnimation duration={2} animateIn='bounceInLeft' animateOnce initiallyVisible={false}>
-          <Name
-            name='name'
-            type='text'
-            title='Name'
-            placeholder='Full Name'
-            value={name}
-            onChange={this.handleChange}
-            required
-            disabled={submitting}
-          />
-        </ScrollAnimation>
-        <ScrollAnimation
-          duration={3}
-          animateIn='bounceInRight'
-          animateOnce
-          initiallyVisible={false}
-        >
-          <Email
-            name='email'
-            type='email'
-            title='Email'
-            placeholder='Email'
-            value={email}
-            onChange={this.handleChange}
-            required
-            disabled={submitting}
-          />
-        </ScrollAnimation>
-        <ScrollAnimation duration={3} animateIn='bounceInUp' animateOnce initiallyVisible={false}>
-          <Message
-            name='message'
-            title='Message'
-            type='text'
-            placeholder='Message'
-            value={message}
-            onChange={this.handleChange}
-            required
-            disabled={submitting}
-          />
-        </ScrollAnimation>
-        <ScrollAnimation duration={3} animateIn='bounceInUp' animateOnce initiallyVisible={false}>
-          <Submit
-            name='submit'
-            type='submit'
-            value={submitting ? "Sending..." : "Send"}
-            disabled={submitting}
-          />
-        </ScrollAnimation>
-        <ModalOverlay onClick={this.closeModal} visible={showModal} />
-
-        <Modal visible={showModal}>
-          <p>Thanks for reaching out</p>
-          <p>I will get back to you shortly.</p>
-          <p>- Richard </p>
-          <ModalButton onClick={this.closeModal}>Tight</ModalButton>
-        </Modal>
-      </Form>
-    );
   }
 }
 
