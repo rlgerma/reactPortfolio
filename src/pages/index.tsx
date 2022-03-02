@@ -59,7 +59,7 @@ const IndexPage = ({
     };
   };
 }): JSX.Element => {
-  const [portView, setPortView] = useState(data.allPortfolioJson.edges);
+  const [portView, setPortView] = useState(data.allClientJson.edges);
   const [portClass, setPortClass] = useState("animate__animated animate__fadeInUp");
   return (
     <Layout noMenu={false}>
@@ -165,18 +165,6 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query indexQuery {
-    allPortfolioJson {
-      edges {
-        node {
-          about
-          image
-          id
-          title
-          url
-          tech
-        }
-      }
-    }
     allMobileJson {
       edges {
         node {

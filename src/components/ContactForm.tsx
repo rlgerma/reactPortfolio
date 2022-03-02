@@ -41,10 +41,37 @@ const Message = styled.textarea`
   box-sizing: border-box;
 `;
 
+const Calendly = styled.input`
+  border: solid 0.1px transparent;
+  padding: 15px;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Raleway";
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 0;
+  color: #fff;
+  background-color: transparent;
+  transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  &:hover {
+    cursor: pointer;
+    color: #006bff;
+    background-color: transparent;
+    text-decoration: none;
+    transform: scale(1.1);
+  }
+`;
+
 const Submit = styled.input`
+  display: flex;
+  justify-content: center;
   border: solid 0.1px #292929;
   padding: 15px 30px;
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
   text-transform: uppercase;
   font-family: "Raleway";
   font-weight: 300;
@@ -242,7 +269,10 @@ class ContactForm extends React.Component<
             type='submit'
             value={submitting ? "Sending..." : "Send"}
             disabled={submitting}
-          />
+          />{" "}
+          <a href='https://calendly.com/richard-germaine' rel='noopener noreferrer' target='_blank'>
+            <Calendly value='Book a call' />
+          </a>
         </ScrollAnimation>
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
 
