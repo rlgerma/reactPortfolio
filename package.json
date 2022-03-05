@@ -11,7 +11,7 @@
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "animate.css": "^4.1.1",
+    "animate.css": "4.1.1",
     "antd": "^4.18.9",
     "babel-plugin-styled-components": "^2.0.6",
     "eslint-config-react-app": "^7.0.0",
@@ -63,7 +63,7 @@
     "@types/scroll-to-element": "^2.0.2",
     "@types/styled-components": "^5.1.23",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.29.2"
+    "eslint-plugin-react": "^7.29.3"
   },
   "eslintConfig": {
     "extends": [
