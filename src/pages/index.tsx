@@ -10,10 +10,14 @@ import Hero from "../components/Hero";
 import HeroText from "../components/HeroText";
 import Layout from "../components/Layout";
 import Portfolio from "../components/Portfolio";
-import { PortfolioProps } from "../components/Portfolio";
 import Technologies from "../components/Technologies";
+
+import { PortfolioProps } from "../components/Portfolio";
 import { TechnologiesProps } from "../components/Technologies";
+
 import media from "../utils/style";
+import "animate.css/animate.min.css";
+import "animate.css/animate.compat.css";
 
 const Section = styled.div`
   text-align: center;
