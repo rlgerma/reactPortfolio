@@ -15,7 +15,7 @@
     "antd": "^4.19.3",
     "babel-plugin-styled-components": "^2.0.6",
     "eslint-config-react-app": "^7.0.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "gatsby": "^2.32.13",
     "gatsby-cli": "^4.10.2",
     "gatsby-image": "^3.11.0",
