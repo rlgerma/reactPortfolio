@@ -39,7 +39,7 @@ const HeroText: FC = () => (
     <span key={7}>.</span>
     <Typist.Backspace count={3} delay={10} />
     <br />
-    <span key={9}>Lets Connect 👋</span>
+    <strong key={9}>Lets Connect 👋</strong>
   </StyledTypist>
 );
 
