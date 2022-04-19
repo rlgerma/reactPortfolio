@@ -270,9 +270,6 @@ class ContactForm extends React.Component<
             value={submitting ? "Sending..." : "Send"}
             disabled={submitting}
           />{" "}
-          {/* <a href='https://calendly.com/richard-germaine' rel='noopener noreferrer' target='_blank'>
-            <Calendly value='Book a call' />
-          </a> */}
         </ScrollAnimation>
         <ModalOverlay onClick={this.closeModal} visible={showModal} />
 
