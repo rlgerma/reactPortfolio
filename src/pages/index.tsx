@@ -79,24 +79,29 @@ const IndexPage = ({
         <ScrollAnimation animateIn='fadeIn' animateOnce delay={1000} initiallyVisible={false}>
           <h5 style={{ fontSize: "1.0125rem", textAlign: "center" }}>
             <Row gutter={16}>
-              <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
+              <Col lg={16} sm={24} style={{ margin: ".2rem auto" }}>
                 My name is <span style={{ fontWeight: 600 }}>Richard Germaine</span> and Im a
-                Developer from Denver.
+                Developer from Denver
               </Col>
             </Row>
             <Row gutter={16}>
               <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
-                Whether you need minor styling on a web page,
+                Whether you need minor styling on a web page
               </Col>
             </Row>
             <Row gutter={16}>
               <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
-                or the next breakout app, I can help you with your project
+                or the next breakout app
+              </Col>
+            </Row>
+            <Row gutter={16}>
+              <Col lg={16} sm={24} style={{ margin: ".3rem auto" }}>
+                I can help you with your project
               </Col>
             </Row>
             <Row gutter={16}>
               <Col lg={16} sm={20} style={{ margin: ".3rem auto" }}>
-                using modern developing technologies and design.
+                using modern developing technologies and design patterns
               </Col>
             </Row>
           </h5>
