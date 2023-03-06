@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@types/react-animate-on-scroll": "^2.1.5",
-    "@types/react-helmet": "^6.1.5",
+    "@types/react-helmet": "^6.1.6",
     "@types/react-typist": "^2.0.3",
     "@types/rebass": "^4.0.10",
     "@types/scroll-to-element": "^2.0.2",
